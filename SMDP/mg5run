@@ -1,0 +1,19 @@
+import model ./SMDP_UFO/
+set automatic_html_opening False
+generate ~xd ~xd~ > dvb dvb
+output dvb
+launch dvb
+shower = Pythia8
+set nevents 10000
+set WDVB Auto
+set gsm  1.00000E-08
+set ptj 0.0
+set pta 0.0
+set ptl 0.0
+set etaj -1.0
+set etaa -1.0
+set etal -1.0
+set mxd  1.00000E+06
+set mdvb  5.00000E-02
+set ebeam1  1.00001E+06
+set ebeam2  1.00001E+06
