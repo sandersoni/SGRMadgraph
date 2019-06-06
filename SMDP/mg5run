@@ -6,14 +6,2808 @@ launch dvb
 shower = Pythia8
 set nevents 10000
 set WDVB Auto
-set gsm  1.00000E-08
 set ptj 0.0
 set pta 0.0
 set ptl 0.0
 set etaj -1.0
 set etaa -1.0
 set etal -1.0
-set mxd  1.00000E+06
-set mdvb  5.00000E-02
-set ebeam1  1.00001E+06
-set ebeam2  1.00001E+06
+set mxd  1.00000E+03
+set gsm  1.00000E-05
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  4.28133E-06
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  1.83298E-06
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  7.84760E-07
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  3.35982E-07
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  1.43845E-07
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  6.15848E-08
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  2.63665E-08
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  1.12884E-08
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  4.83293E-09
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  2.06914E-09
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  8.85867E-10
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  3.79269E-10
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  1.62378E-10
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  6.95193E-11
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  2.97635E-11
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  1.27427E-11
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  5.45559E-12
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  2.33572E-12
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.00000E+03
+set gsm  1.00000E-12
+set adm  3.50000E-02
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+03
+set ebeam2  1.00001E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  1.00000E-05
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  4.28133E-06
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  1.83298E-06
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  7.84760E-07
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  3.35982E-07
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  1.43845E-07
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  6.15848E-08
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  2.63665E-08
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  1.12884E-08
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  4.83293E-09
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  2.06914E-09
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  8.85867E-10
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  3.79269E-10
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  1.62378E-10
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  6.95193E-11
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  2.97635E-11
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  1.27427E-11
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  5.45559E-12
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  2.33572E-12
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.27427E+03
+set gsm  1.00000E-12
+set adm  4.45996E-02
+set mdvb  5.00000E-01
+set ebeam1  1.27429E+03
+set ebeam2  1.27429E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  1.00000E-05
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  4.28133E-06
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  1.83298E-06
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  7.84760E-07
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  3.35982E-07
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  1.43845E-07
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  6.15848E-08
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  2.63665E-08
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  1.12884E-08
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  4.83293E-09
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  2.06914E-09
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  8.85867E-10
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  3.79269E-10
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  1.62378E-10
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  6.95193E-11
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  2.97635E-11
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  1.27427E-11
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  5.45559E-12
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  2.33572E-12
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  1.62378E+03
+set gsm  1.00000E-12
+set adm  5.68322E-02
+set mdvb  5.00000E-01
+set ebeam1  1.62379E+03
+set ebeam2  1.62379E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  1.00000E-05
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  4.28133E-06
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  1.83298E-06
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  7.84760E-07
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  3.35982E-07
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  1.43845E-07
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  6.15848E-08
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  2.63665E-08
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  1.12884E-08
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  4.83293E-09
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  2.06914E-09
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  8.85867E-10
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  3.79269E-10
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  1.62378E-10
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  6.95193E-11
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  2.97635E-11
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  1.27427E-11
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  5.45559E-12
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  2.33572E-12
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.06914E+03
+set gsm  1.00000E-12
+set adm  7.24198E-02
+set mdvb  5.00000E-01
+set ebeam1  2.06916E+03
+set ebeam2  2.06916E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  1.00000E-05
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  4.28133E-06
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  1.83298E-06
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  7.84760E-07
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  3.35982E-07
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  1.43845E-07
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  6.15848E-08
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  2.63665E-08
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  1.12884E-08
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  4.83293E-09
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  2.06914E-09
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  8.85867E-10
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  3.79269E-10
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  1.62378E-10
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  6.95193E-11
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  2.97635E-11
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  1.27427E-11
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  5.45559E-12
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  2.33572E-12
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  2.63665E+03
+set gsm  1.00000E-12
+set adm  9.22828E-02
+set mdvb  5.00000E-01
+set ebeam1  2.63668E+03
+set ebeam2  2.63668E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  1.00000E-05
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  4.28133E-06
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  1.83298E-06
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  7.84760E-07
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  3.35982E-07
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  1.43845E-07
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  6.15848E-08
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  2.63665E-08
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  1.12884E-08
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  4.83293E-09
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  2.06914E-09
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  8.85867E-10
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  3.79269E-10
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  1.62378E-10
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  6.95193E-11
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  2.97635E-11
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  1.27427E-11
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  5.45559E-12
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  2.33572E-12
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  3.35982E+03
+set gsm  1.00000E-12
+set adm  1.17594E-01
+set mdvb  5.00000E-01
+set ebeam1  3.35985E+03
+set ebeam2  3.35985E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  1.00000E-05
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  4.28133E-06
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  1.83298E-06
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  7.84760E-07
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  3.35982E-07
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  1.43845E-07
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  6.15848E-08
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  2.63665E-08
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  1.12884E-08
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  4.83293E-09
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  2.06914E-09
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  8.85867E-10
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  3.79269E-10
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  1.62378E-10
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  6.95193E-11
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  2.97635E-11
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  1.27427E-11
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  5.45559E-12
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  2.33572E-12
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  4.28133E+03
+set gsm  1.00000E-12
+set adm  1.49847E-01
+set mdvb  5.00000E-01
+set ebeam1  4.28138E+03
+set ebeam2  4.28138E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  1.00000E-05
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  4.28133E-06
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  1.83298E-06
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  7.84760E-07
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  3.35982E-07
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  1.43845E-07
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  6.15848E-08
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  2.63665E-08
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  1.12884E-08
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  4.83293E-09
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  2.06914E-09
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  8.85867E-10
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  3.79269E-10
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  1.62378E-10
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  6.95193E-11
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  2.97635E-11
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  1.27427E-11
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  5.45559E-12
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  2.33572E-12
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  5.45559E+03
+set gsm  1.00000E-12
+set adm  1.90946E-01
+set mdvb  5.00000E-01
+set ebeam1  5.45565E+03
+set ebeam2  5.45565E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  1.00000E-05
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  4.28133E-06
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  1.83298E-06
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  7.84760E-07
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  3.35982E-07
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  1.43845E-07
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  6.15848E-08
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  2.63665E-08
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  1.12884E-08
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  4.83293E-09
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  2.06914E-09
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  8.85867E-10
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  3.79269E-10
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  1.62378E-10
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  6.95193E-11
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  2.97635E-11
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  1.27427E-11
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  5.45559E-12
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  2.33572E-12
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  6.95193E+03
+set gsm  1.00000E-12
+set adm  2.43317E-01
+set mdvb  5.00000E-01
+set ebeam1  6.95200E+03
+set ebeam2  6.95200E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  1.00000E-05
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  4.28133E-06
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  1.83298E-06
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  7.84760E-07
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  3.35982E-07
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  1.43845E-07
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  6.15848E-08
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  2.63665E-08
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  1.12884E-08
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  4.83293E-09
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  2.06914E-09
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  8.85867E-10
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  3.79269E-10
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  1.62378E-10
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  6.95193E-11
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  2.97635E-11
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  1.27427E-11
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  5.45559E-12
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  2.33572E-12
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  8.85867E+03
+set gsm  1.00000E-12
+set adm  3.10053E-01
+set mdvb  5.00000E-01
+set ebeam1  8.85876E+03
+set ebeam2  8.85876E+03
+launch dvb
+set mxd  1.12884E+04
+set gsm  1.00000E-05
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  4.28133E-06
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  1.83298E-06
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  7.84760E-07
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  3.35982E-07
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  1.43845E-07
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  6.15848E-08
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  2.63665E-08
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  1.12884E-08
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  4.83293E-09
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  2.06914E-09
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  8.85867E-10
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  3.79269E-10
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  1.62378E-10
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  6.95193E-11
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  2.97635E-11
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  1.27427E-11
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  5.45559E-12
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  2.33572E-12
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.12884E+04
+set gsm  1.00000E-12
+set adm  3.95093E-01
+set mdvb  5.00000E-01
+set ebeam1  1.12885E+04
+set ebeam2  1.12885E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  1.00000E-05
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  4.28133E-06
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  1.83298E-06
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  7.84760E-07
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  3.35982E-07
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  1.43845E-07
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  6.15848E-08
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  2.63665E-08
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  1.12884E-08
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  4.83293E-09
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  2.06914E-09
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  8.85867E-10
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  3.79269E-10
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  1.62378E-10
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  6.95193E-11
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  2.97635E-11
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  1.27427E-11
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  5.45559E-12
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  2.33572E-12
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.43845E+04
+set gsm  1.00000E-12
+set adm  5.03457E-01
+set mdvb  5.00000E-01
+set ebeam1  1.43846E+04
+set ebeam2  1.43846E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  1.00000E-05
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  4.28133E-06
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  1.83298E-06
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  7.84760E-07
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  3.35982E-07
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  1.43845E-07
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  6.15848E-08
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  2.63665E-08
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  1.12884E-08
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  4.83293E-09
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  2.06914E-09
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  8.85867E-10
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  3.79269E-10
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  1.62378E-10
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  6.95193E-11
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  2.97635E-11
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  1.27427E-11
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  5.45559E-12
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  2.33572E-12
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  1.83298E+04
+set gsm  1.00000E-12
+set adm  6.41543E-01
+set mdvb  5.00000E-01
+set ebeam1  1.83300E+04
+set ebeam2  1.83300E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  1.00000E-05
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  4.28133E-06
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  1.83298E-06
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  7.84760E-07
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  3.35982E-07
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  1.43845E-07
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  6.15848E-08
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  2.63665E-08
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  1.12884E-08
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  4.83293E-09
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  2.06914E-09
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  8.85867E-10
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  3.79269E-10
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  1.62378E-10
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  6.95193E-11
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  2.97635E-11
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  1.27427E-11
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  5.45559E-12
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  2.33572E-12
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.33572E+04
+set gsm  1.00000E-12
+set adm  8.17503E-01
+set mdvb  5.00000E-01
+set ebeam1  2.33574E+04
+set ebeam2  2.33574E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  1.00000E-05
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  4.28133E-06
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  1.83298E-06
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  7.84760E-07
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  3.35982E-07
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  1.43845E-07
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  6.15848E-08
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  2.63665E-08
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  1.12884E-08
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  4.83293E-09
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  2.06914E-09
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  8.85867E-10
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  3.79269E-10
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  1.62378E-10
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  6.95193E-11
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  2.97635E-11
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  1.27427E-11
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  5.45559E-12
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  2.33572E-12
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  2.97635E+04
+set gsm  1.00000E-12
+set adm  1.04172E+00
+set mdvb  5.00000E-01
+set ebeam1  2.97638E+04
+set ebeam2  2.97638E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  1.00000E-05
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  4.28133E-06
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  1.83298E-06
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  7.84760E-07
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  3.35982E-07
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  1.43845E-07
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  6.15848E-08
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  2.63665E-08
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  1.12884E-08
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  4.83293E-09
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  2.06914E-09
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  8.85867E-10
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  3.79269E-10
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  1.62378E-10
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  6.95193E-11
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  2.97635E-11
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  1.27427E-11
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  5.45559E-12
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  2.33572E-12
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  3.79269E+04
+set gsm  1.00000E-12
+set adm  1.32744E+00
+set mdvb  5.00000E-01
+set ebeam1  3.79273E+04
+set ebeam2  3.79273E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  1.00000E-05
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  4.28133E-06
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  1.83298E-06
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  7.84760E-07
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  3.35982E-07
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  1.43845E-07
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  6.15848E-08
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  2.63665E-08
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  1.12884E-08
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  4.83293E-09
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  2.06914E-09
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  8.85867E-10
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  3.79269E-10
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  1.62378E-10
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  6.95193E-11
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  2.97635E-11
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  1.27427E-11
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  5.45559E-12
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  2.33572E-12
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  4.83293E+04
+set gsm  1.00000E-12
+set adm  1.69153E+00
+set mdvb  5.00000E-01
+set ebeam1  4.83298E+04
+set ebeam2  4.83298E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  1.00000E-05
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  4.28133E-06
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  1.83298E-06
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  7.84760E-07
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  3.35982E-07
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  1.43845E-07
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  6.15848E-08
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  2.63665E-08
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  1.12884E-08
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  4.83293E-09
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  2.06914E-09
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  8.85867E-10
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  3.79269E-10
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  1.62378E-10
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  6.95193E-11
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  2.97635E-11
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  1.27427E-11
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  5.45559E-12
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  2.33572E-12
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  6.15848E+04
+set gsm  1.00000E-12
+set adm  2.15547E+00
+set mdvb  5.00000E-01
+set ebeam1  6.15854E+04
+set ebeam2  6.15854E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  1.00000E-05
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  4.28133E-06
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  1.83298E-06
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  7.84760E-07
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  3.35982E-07
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  1.43845E-07
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  6.15848E-08
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  2.63665E-08
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  1.12884E-08
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  4.83293E-09
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  2.06914E-09
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  8.85867E-10
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  3.79269E-10
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  1.62378E-10
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  6.95193E-11
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  2.97635E-11
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  1.27427E-11
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  5.45559E-12
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  2.33572E-12
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  7.84760E+04
+set gsm  1.00000E-12
+set adm  2.74666E+00
+set mdvb  5.00000E-01
+set ebeam1  7.84768E+04
+set ebeam2  7.84768E+04
+launch dvb
+set mxd  1.00000E+05
+set gsm  1.00000E-05
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  4.28133E-06
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  1.83298E-06
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  7.84760E-07
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  3.35982E-07
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  1.43845E-07
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  6.15848E-08
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  2.63665E-08
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  1.12884E-08
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  4.83293E-09
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  2.06914E-09
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  8.85867E-10
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  3.79269E-10
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  1.62378E-10
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  6.95193E-11
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  2.97635E-11
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  1.27427E-11
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  5.45559E-12
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  2.33572E-12
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+launch dvb
+set mxd  1.00000E+05
+set gsm  1.00000E-12
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05

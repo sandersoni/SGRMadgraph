@@ -26,8 +26,8 @@ If[FileExistsQ["ann"],DeleteFile["ann"]]
 build = input[[1,2]];
 inm\[Chi]=input[[2,2]];
 inmA=input[[3,2]];
-inep=input[[4,2]];
-in\[Alpha]\[Chi]=If[StringMatchQ[ToString[input[[5,2]]],"thermal"],0.035 inm\[Chi]/1000,input[[5,2]]];
+inep=input[[5,2]];
+in\[Alpha]\[Chi]=If[StringMatchQ[ToString[input[[4,2]]],"thermal"],0.035 inm\[Chi]/1000,input[[4,2]]];
 
 
 k=2.5; (*See 1602.01465 Eq. 15/16 for what these constants are*)
@@ -152,14 +152,14 @@ EN[An_]:=(*1/GeV*)(*Desired units of GeV*)0.114/An^(5/3) (*GeV*);
 t\[Sigma]SI = 7.542 10^-5 pb /.{pb-> 10^-36 cm^2};
 t\[Sigma]SD = 0;
 \[CapitalGamma]cap=1/s 5.9 10^22 ((100 GeV)/(tm\[Chi] GeV))^2 ((270 km/s)/(u0 m/s))^3 (t\[Sigma]SI 1200)/(10^-40 cm^2)/.{km->1000m};
-tu=1/2. vgal;
-tm\[Chi]=100;
-tmN=16;
-tAN=16;
-tmA=0.05;
+(*tu=1/2.vgal;
+tm\[Chi]=1000.;
+tmN=1;
+tAN=1;
+tmA=0.5;
 tr=1 10^6;
 t\[Epsilon]=10^-8;
-t\[Alpha]\[Chi]=0.035 tm\[Chi]/1000;
+t\[Alpha]\[Chi]=0.035 tm\[Chi]/1000;*)
 integrandr[r_,i_]:=4\[Pi] r^2 nd[r,i];
 integrandu[r_,u_]:=4\[Pi] u(u^2+vei[r]^2)fSi[u];
 d\[Sigma]dE[r_,u_,m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_,ER_,mn_,Zn_,En_]:= 8 \[Pi] \[Epsilon]^2 \[Alpha]\[Chi] \[Alpha] Zn^2 mn /((u^2+vei[r]^2)(2mn ER +mA^2)^2) Exp[-ER/En]\[HBar]^2 c^4/.{\[Alpha]-> 1/137.}/.{\[HBar]-> 6.582119 10^-22 0.001 }/.{c-> 3 10^8};
@@ -192,8 +192,16 @@ Cann[m\[Chi]_,mA_,\[Alpha]\[Chi]_]:=\[Sigma]v[m\[Chi],mA,\[Alpha]\[Chi]] ((GN m\
 \[Tau]rat[m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_]:=\[Tau][m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi]]/\[Tau]S
 N\[Chi][m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_]:=Sqrt[CTcap[m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi]]/Cann[m\[Chi],mA,\[Alpha]\[Chi]]]Tanh[\[Tau]S/\[Tau][m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi]]]
 \[CapitalGamma]ann [m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_]:= 1/2 CTcap[m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi]]Tanh[\[Tau]S/\[Tau][m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi]]]^2
+EDDmax[u_,m\[Chi]_,mn_]:=(*1./GeV*)(*Desired units of GeV*)(2 (\[Mu]N^2)(*GeV^2/c^4*)( u^2)(*m^2/s^2*))/mn (*GeV/c^2*)  1/c^2/.{\[Mu]N-> (m\[Chi] mn)/(m\[Chi]+mn),c->2.99792458 10^8};
+d\[Sigma]DDdE[u_,m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_,ER_,mn_,Zn_,En_]:= 8 \[Pi] \[Epsilon]^2 \[Alpha]\[Chi] \[Alpha] Zn^2 mn /((u^2)(2mn ER +mA^2)^2) Exp[-ER/En]\[HBar]^2 c^4/.{\[Alpha]-> 1/137.}/.{\[HBar]-> 6.582119 10^-22 0.001 }/.{c-> 2.99792458 10^8};
+integranduDD[u_]:=4\[Pi] (u^2)fSi[u];
+\[Sigma]DD[m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_,mN_,ZN_,EN_]:=NIntegrate[
+d\[Sigma]DDdE[u,m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],ER,mN,ZN,EN]integranduDD[u],{u,0,(*upint*)10upintHS[m\[Chi],mN]},
+{ER,0,EDDmax[u,m\[Chi],mN]},WorkingPrecision->4,Method-> {Automatic,"SymbolicProcessing"->0}]/.{n\[Chi]-> \[Rho]\[Chi]/m\[Chi]}
+mp=0.938272;
+out\[Sigma]=\[Sigma]DD[inm\[Chi],inmA,inep,in\[Alpha]\[Chi],mp,1.,EN[1.]]10^4(*in cm^2*)(*m^2(1 pb)/(10^-40m^2)*);
 out\[CapitalGamma]ann = \[CapitalGamma]ann[inm\[Chi],inmA,inep,in\[Alpha]\[Chi]];
-Export["ann",out\[CapitalGamma]ann,"Table"];
+Export["ann",{out\[CapitalGamma]ann,out\[Sigma]},"Table"];
 
 
 
