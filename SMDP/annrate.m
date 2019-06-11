@@ -21,6 +21,7 @@
 
 (* ::Input::Initialization:: *)
 SetDirectory[Directory[]];
+
 input=Import["input"];
 If[FileExistsQ["ann"],DeleteFile["ann"]]
 build = input[[1,2]];
@@ -201,7 +202,8 @@ d\[Sigma]DDdE[u,m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],ER,mN,ZN,EN]integranduDD[u]
 mp=0.938272;
 out\[Sigma]=\[Sigma]DD[inm\[Chi],inmA,inep,in\[Alpha]\[Chi],mp,1.,EN[1.]]10^4(*in cm^2*)(*m^2(1 pb)/(10^-40m^2)*);
 out\[CapitalGamma]ann = \[CapitalGamma]ann[inm\[Chi],inmA,inep,in\[Alpha]\[Chi]];
-Export["ann",{out\[CapitalGamma]ann,out\[Sigma]},"Table"];
+out\[Tau]rat=\[Tau]rat[inm\[Chi],inmA,inep,in\[Alpha]\[Chi]];
+Export["ann",{out\[CapitalGamma]ann,out\[Sigma],out\[Tau]rat},"Table"];
 
 
 

@@ -21,11 +21,12 @@
 
 (* ::Input::Initialization:: *)
 SetDirectory[Directory[]];
+
 nevents=10000; (*number of events per mg5 run*)
-parameters={{"mxd",10.^3,10.^5,20},{"gsm",10^-5,10^-12,20},{"adm"},{"mdvb"}};(*parameters to be tracked. First two have syntax {"name", scan start, scan end, number of steps}. To not scan set start = end and steps = Null*)
+parameters={{"mxd",10.^3,10.^5,4},{"gsm",10^-12,10^-8,4},{"adm"},{"mdvb"}};(*parameters to be tracked. First two have syntax {"name", scan start, scan end, number of steps}. To not scan set start = end and steps = Null*)
 intab=Table[{10.^par1,10.^par2,0.035 10.^par1/1000.,0.5},{par1,Log10[parameters[[1,2]]],Log10[parameters[[1,3]]],If[parameters[[1,2]]!=parameters[[1,3]],(Log10[parameters[[1,3]]]-Log10[parameters[[1,2]]])/(parameters[[1,4]]-1.),Null]},{par2,Log10[parameters[[2,2]]],Log10[parameters[[2,3]]],If[parameters[[2,2]]!=parameters[[2,3]],(Log10[parameters[[2,3]]]-Log10[parameters[[2,2]]])/(parameters[[2,4]]-1.),Null]}];
 If[Length[Dimensions[intab]]==3,
-intab=Flatten[intab,1]];(*intab is the table of parameters to be input into madgraph for the scan.*)
+intab=Flatten[intab,1]](*intab is the table of parameters to be input into madgraph for the scan.*);
 
 (*fixedform is what makes the numbers nice to print to a file*)
 StringPadLeft["",1];(*this must be evaluated first for no evident reason*)fixedform[numd_,data_]:=Module[{ef},ef[s_String/;StringTake[s,1]=="-"]:="-"<>StringPadLeft[StringTake[s,{2,-1}],2,"0"];
@@ -41,10 +42,19 @@ $mg5runfile="mg5run";
 $pythiaoutputfile="pythiaoutput";
 $pythonoutputfile="photonenergy";
 $resultsfile="eflux"<>ToString[$KernelID];
+$debugfile = "debug"<>$mg5outputfile;
 build=0;
 talpha="thermal";
 au=1.49598 10^11 *100;(*distance from earth to sun in cm*)
+If[FileExistsQ[$debugfile],DeleteFile[$debugfile]];
 
+
+(* ::Input::Initialization:: *)
+If[FileExistsQ["pythia8_card_"<>$mg5outputfile<>".dat"],DeleteFile["pythia8_card_"<>$mg5outputfile<>".dat"]];
+CopyFile["pythia8_card_default.dat","pythia8_card_"<>$mg5outputfile<>".dat"];
+pythiacard=OpenAppend["pythia8_card_"<>$mg5outputfile<>".dat",PageWidth-> 500];
+WriteString[pythiacard,"ResonanceWidths:minWidth = 1e-30"];(*This enables particles with very small widths to still decay by avoiding their width being set to zero for being below the default min of 1e-20*);
+Close[pythiacard];
 
 
 (* ::Input::Initialization:: *)
@@ -62,13 +72,13 @@ mg5run={"import model ./SMDP_UFO/",
 "shower = Pythia8",
 "set nevents "<>ToString[nevents],
 "set WDVB Auto",
-(*"set gsm "<>ToString[fixedform[6,gsm]],*)
 "set ptj 0.0",
 "set pta 0.0",
 "set ptl 0.0",
 "set etaj -1.0",
 "set etaa -1.0",
-"set etal -1.0\n"};
+"set etal -1.0",
+"./pythia8_card_"<>$mg5outputfile<>".dat\n"};
 Export[$mg5runfile,mg5run,"text"];
 runfile=OpenAppend[$mg5runfile,PageWidth-> 500];
 (*tab=Flatten[partable,1];*)
@@ -79,11 +89,12 @@ WriteString[runfile,"set "<>parameters[[3,1]]<>" " <> ToString[fixedform[6,parta
 WriteString[runfile,"set "<>parameters[[4,1]]<>" " <> ToString[fixedform[6,partable[[i,4]]]]<>"\n"];
 WriteString[runfile,"set ebeam1 "<>ToString[fixedform[6,partable[[i,1]]*1.00001]]<>"\n"];
 WriteString[runfile,"set ebeam2 "<>ToString[fixedform[6,partable[[i,1]]*1.00001]]<>"\n"];
+WriteString[runfile,"set WDVB Auto\n"];
 If[i!=Length[partable],WriteString[runfile,"launch "<>$mg5outputfile<>"\n"]];
 ,{i,Length[partable]}];
 Close[runfile];
 Run["mg5_aMC "<>$mg5runfile];)
-ScanMadgraph[intab];
+(*ScanMadgraph[intab]*)
 
 
 (* ::Input::Initialization:: *)
@@ -102,11 +113,10 @@ Table[readparameter[path,parameters[[i,1]]],{i,1,Length[parameters]}])
 
 
 (* ::Input::Initialization:: *)
-(*pythiaread[] for all run folders in the mg5outputfile reads all the specified parameters from the banners, then decompresses the pythia events. The python file read.py then reads the pythia files, and extracts the photon energy spectrum. *)
+(*pythiaread[] for all run folders in the mg5outputfile reads all the specified parameters from the banners, then decompresses the pythia events. The python file read.py then reads the pythia files, and extracts the photon energy spectrum, which is appended to the results file *)
 pythiaread[]:=
 (fn=FileNames[All,$mg5outputfile<>"/Events"];
 fnb=fn;
-If[FileExistsQ[$resultsfile],DeleteFile[$resultsfile]];
 Do[
 fnb[[fni]]=fn[[fni]]<>"/"<>StringTake[fn[[fni]],{StringPosition[fn[[fni]],"run_"][[1,1]],StringLength[fn[[fni]]]}]<>"_tag_1_banner.txt",{fni,1,Length[fn]}];
 (*fnb is the file name of the banner for run_fni*)
@@ -121,7 +131,6 @@ If[FileExistsQ[$pythonoutputfile<>ToString[fni]],DeleteFile[$pythonoutputfile<>T
 Run["python read.py "<>$pythiaoutputfile<>ToString[fni]<>" "<>$pythonoutputfile<>ToString[fni]];
 DeleteFile[$pythiaoutputfile<>ToString[fni]];
 photonE=Flatten[Import[$pythonoutputfile<>ToString[fni]]];
-If[admread>1,Print["Warning: Dark photon - DM fine structure constant of ",admread," exceeding perturbativity"]];
 (*Print[{m\[Chi]read,mAread,admread,gsmread,photonE}];*)
 If[FileExistsQ[$inputfile],DeleteFile[$inputfile]];
 input={"build "<>ToString[build],
@@ -131,17 +140,45 @@ input={"build "<>ToString[build],
 "gsm "<>ToString[fixedform[6,gsmread]](*If[StringMatchQ[ToString[talpha],"thermal"],talpha,ToString[fixedform[6,talpha]]]*)};
 Export[$inputfile,input,"text"];
 Run["math -run -noprompt < annrate.m"];
-annrate=Import["ann","Table"][[1,1]]//ToExpression(*DM annihilation rate per second*);
-sigmacm=Import["ann","Table"][[2,1]]//ToExpression(*DD \[Sigma] in cm^2*);
+annin=Import["ann","Table"]//ToExpression;
+annrate=annin[[1,1]](*DM annihilation rate per second*);
+sigmacm=annin[[2,1]](*DD \[Sigma] in cm^2*);
+taurat=annin[[3,1]](*ratio of equilibrium time over lifetime of sun*);
 eflux=Table[photonE[[i]]/nevents*annrate 1/(4\[Pi] au^2),{i,1,Length[photonE]}];
-Print[{m\[Chi]read,mAread,admread,gsmread,annrate,eflux,sigmacm}];
+outlist={m\[Chi]read,mAread,admread,gsmread,annrate,eflux,sigmacm,taurat};
+Print[outlist];
 results=OpenAppend[$resultsfile,PageWidth-> 500];
-Write[results,{m\[Chi]read,mAread,admread,gsmread,annrate,eflux,sigmacm}];
+Write[results,outlist];
 Close[results];
 (*DeleteFile[$pythiaoutputfile<>ToString[fni]];*)
 DeleteFile[$pythonoutputfile<>ToString[fni]];
+If[admread>1,(Print["Warning: Dark photon - DM fine structure constant of ",admread," exceeding perturbativity"];
+(*Warning outputs*)
+dbo=OpenAppend[$debugfile,PageWidth-> 1000];
+Write[dbo,"adm > 1: "];
+Write[dbo,outlist];
+Close[dbo];)];
+If[taurat>1,(Print["Warning: Equilibrium time greater than sun lifetime, ratio is: ",taurat];
+(*Warning outputs*)
+dbo=OpenAppend[$debugfile,PageWidth-> 1000];
+Write[dbo,"tauratio > 1: "];
+Write[dbo,outlist];
+Close[dbo];)];
 ,{fni,1,Length[fn]}])
-pythiaread[]
+(*pythiaread[]*)
 
 
-
+(* ::Input::Initialization:: *)
+(*This section actually performs the scan; it will generate 10 madgraphs at a time, then read them and delete them, to avoid filling up the computer storage*)
+finalscan[]:=(
+If[FileExistsQ[$resultsfile],DeleteFile[$resultsfile]];
+lefttab=intab;
+Do[If[Length[lefttab]>10,
+scantab=Take[lefttab,10];
+lefttab=Drop[lefttab,10];,
+scantab=lefttab];
+ScanMadgraph[scantab];
+pythiaread[];
+,{i,1,Length[intab],10}]
+)
+finalscan[]
