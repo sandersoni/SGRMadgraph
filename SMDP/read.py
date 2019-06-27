@@ -29,9 +29,12 @@ with open("{}".format(sys.argv[1]),"r") as f:
 
 particlespd = pd.DataFrame(particles)
 print("Final particle PDGs:\n", particlespd['pdg'].value_counts())
-# particles.query('pdg == 22')['energy'].hist(bins=[0,500,1600,5000,15700,50000,158100],log=True)
+#particles.query('pdg == 100001')['energy'].hist(bins=[0,500,1600,5000,15700,50000,158100],log=True)
+#particles.query('pdg == 100001')['energy'].hist(log=True)
+#dp = [p['energy'] for p in particles if p['pdg'] == 100001]
+#pyplot.hist(dp)
 # pyplot.xscale('log')
-# pyplot.show()
+#pyplot.show()
 
 
 

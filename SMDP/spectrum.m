@@ -23,7 +23,7 @@
 SetDirectory[Directory[]];
 
 nevents=10000; (*number of events per mg5 run*)
-parameters={{"mxd",10.^3,10.^5,4},{"gsm",10^-12,10^-8,4},{"adm"},{"mdvb"}};(*parameters to be tracked. First two have syntax {"name", scan start, scan end, number of steps}. To not scan set start = end and steps = Null*)
+parameters={{"mxd",10.^(3+2/49.*20),10.^5,30},{"gsm",10.^-12,5*10.^-10,50},{"adm"},{"mdvb"}};(*parameters to be tracked. First two have syntax {"name", scan start, scan end, number of steps}. To not scan set start = end and steps = Null*)
 intab=Table[{10.^par1,10.^par2,0.035 10.^par1/1000.,0.5},{par1,Log10[parameters[[1,2]]],Log10[parameters[[1,3]]],If[parameters[[1,2]]!=parameters[[1,3]],(Log10[parameters[[1,3]]]-Log10[parameters[[1,2]]])/(parameters[[1,4]]-1.),Null]},{par2,Log10[parameters[[2,2]]],Log10[parameters[[2,3]]],If[parameters[[2,2]]!=parameters[[2,3]],(Log10[parameters[[2,3]]]-Log10[parameters[[2,2]]])/(parameters[[2,4]]-1.),Null]}];
 If[Length[Dimensions[intab]]==3,
 intab=Flatten[intab,1]](*intab is the table of parameters to be input into madgraph for the scan.*);

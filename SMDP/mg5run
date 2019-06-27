@@ -13,24 +13,8 @@ set etaj -1.0
 set etaa -1.0
 set etal -1.0
 ./pythia8_card_dvb.dat
-set mxd  2.15443E+04
-set gsm  4.64159E-10
-set adm  7.54052E-01
-set mdvb  5.00000E-01
-set ebeam1  2.15446E+04
-set ebeam2  2.15446E+04
-set WDVB Auto
-launch dvb
-set mxd  2.15443E+04
-set gsm  1.00000E-08
-set adm  7.54052E-01
-set mdvb  5.00000E-01
-set ebeam1  2.15446E+04
-set ebeam2  2.15446E+04
-set WDVB Auto
-launch dvb
 set mxd  1.00000E+05
-set gsm  1.00000E-12
+set gsm  1.59676E-10
 set adm  3.50000E+00
 set mdvb  5.00000E-01
 set ebeam1  1.00001E+05
@@ -38,7 +22,7 @@ set ebeam2  1.00001E+05
 set WDVB Auto
 launch dvb
 set mxd  1.00000E+05
-set gsm  2.15443E-11
+set gsm  1.81268E-10
 set adm  3.50000E+00
 set mdvb  5.00000E-01
 set ebeam1  1.00001E+05
@@ -46,7 +30,7 @@ set ebeam2  1.00001E+05
 set WDVB Auto
 launch dvb
 set mxd  1.00000E+05
-set gsm  4.64159E-10
+set gsm  2.05780E-10
 set adm  3.50000E+00
 set mdvb  5.00000E-01
 set ebeam1  1.00001E+05
@@ -54,7 +38,55 @@ set ebeam2  1.00001E+05
 set WDVB Auto
 launch dvb
 set mxd  1.00000E+05
-set gsm  1.00000E-08
+set gsm  2.33606E-10
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+set WDVB Auto
+launch dvb
+set mxd  1.00000E+05
+set gsm  2.65195E-10
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+set WDVB Auto
+launch dvb
+set mxd  1.00000E+05
+set gsm  3.01055E-10
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+set WDVB Auto
+launch dvb
+set mxd  1.00000E+05
+set gsm  3.41764E-10
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+set WDVB Auto
+launch dvb
+set mxd  1.00000E+05
+set gsm  3.87979E-10
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+set WDVB Auto
+launch dvb
+set mxd  1.00000E+05
+set gsm  4.40442E-10
+set adm  3.50000E+00
+set mdvb  5.00000E-01
+set ebeam1  1.00001E+05
+set ebeam2  1.00001E+05
+set WDVB Auto
+launch dvb
+set mxd  1.00000E+05
+set gsm  5.00000E-10
 set adm  3.50000E+00
 set mdvb  5.00000E-01
 set ebeam1  1.00001E+05

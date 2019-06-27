@@ -20,7 +20,7 @@
 
 
 (* ::Input::Initialization:: *)
-SetDirectory[Directory[]];
+SetDirectory[NotebookDirectory[]];
 
 input=Import["input"];
 If[FileExistsQ["ann"],DeleteFile["ann"]]
