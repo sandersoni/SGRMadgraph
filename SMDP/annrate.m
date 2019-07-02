@@ -39,6 +39,7 @@ SR=6.957 10^8;(*Solar radius*)
 \[Rho]\[Chi]=0.3 10^6(*Local dark matter density; PDG says 0.3 GeV/c^2 per cm^-3 = 10^6*0.3 GeV/c^2 per m^-3 *);
 Gconst=6.67408 10^-11;
 SSM=Import["data/SSM.dat"];
+(*The lighter elements seem to have density as a function of radius, so I pulled these functions from *)
 (*NB These appear to be mass fractions, not fraction by number. If the second entry is divided by the mass number then it will be fraction by number.*)
 Hab=Table[{SSM[[i,2]]*SR,SSM[[i,7]]},{i,2,Length[SSM]}];
 He4ab=Table[{SSM[[i,2]]*SR,SSM[[i,8]](*/4*)},{i,2,Length[SSM]}];
@@ -52,27 +53,39 @@ He3abf=Interpolation[He3ab];
 C12abf=Interpolation[C12ab];
 N14abf=Interpolation[N14ab];
 O16abf=Interpolation[O16ab];
-(*
-LogPlot[{Habf[r],He4abf[r],He3abf[r],C12abf[r],N14abf[r],O16abf[r]},{r,SSM[[2,2]],SSM[[Length[SSM],2]]},PlotRange\[Rule]All,PlotLegends\[Rule] {"H","He4","He3","C12","N14","O16"},Frame\[Rule]True,FrameLabel\[Rule]{"Radius/Solar Radius","Fraction by Number"},LabelStyle\[Rule]{Black,15}]
-Export["capture.pdf",%]
-NIntegrate[r^2Habf[r],{r,SSM[[2,2]],SSM[[Length[SSM],2]]}]
-NIntegrate[r^2He4abf[r],{r,SSM[[2,2]],SSM[[Length[SSM],2]]}]*)
+
+(*Solar mass density importing data*)
 SMD=Import["data/SolarMassDensity.csv"](*//ToExpression*)(*kg/m^3, r (m)*);
 SMDtab=Table[{SMD[[i,1]]*SR,SMD[[i,2]]},{i,1,Length[SMD]}];
 SMDi=Interpolation[SMDtab,InterpolationOrder->1];
+SM=NIntegrate[SMDi[x]4\[Pi] x^2,{x,0,SR}];
+(*Htnf is the total fraction by number of hydrogen in the sun*)
+Htnf=0.912;
+(*Htmf is the total fraction by mass of hydrogen in the sun*)
+Htmf=0.710;
+(*Total number of atoms in the sun*)
+tn=(Htmf*SM)/(1.007825 au Htnf)/.{au->1.660539 10^-27(*kg*)};
+
+(*The function ndtf takes the astrophysical parameter log\[Epsilon]X for a particular element in the sun and outputs the total number density fraction of the sun (e.g. what fraction of the sun is that element by number). The values are taken from 1405.0279 and 1405.0287*)
+tnf[log\[Epsilon]X_]:=10^log\[Epsilon]X/10^12 Htnd;
+log\[Epsilon]={(*Mg*) 7.59, (*Si*) 7.51, (*P*) 5.41, (*S*) 7.12, (*K*) 5.04, (*Ca*) 6.32, (*Sc*) 3.16, (*Ti*) 4.93, (*V*) 3.89, (*Cr*) 5.62, (*Mn*) 5.42, (*Fe*) 7.47, (*Co*) 4.93, (*Ni*) 6.20};
+(*Table of constant number densities for heavier atoms, number/m^3*)
+ndtab=Table[tnf[log\[Epsilon][[i]]],{i,1,Length[log\[Epsilon]]}]*tn/(4/3 \[Pi] SR^3);
+
+(*These are number densities of atoms, number/m^3, radius dependent*)
 Hnd[x_]:=SMDi[x]Habf[x]/Hmass/.{Hmass-> 1.007825 au}/.{au->1.660539 10^-27(*kg*)}
 He4nd[x_]:=SMDi[x]He4abf[x]/Hmass/.{Hmass-> 4.002602 au}/.{au->1.660539 10^-27(*kg*)}
 He3nd[x_]:=SMDi[x]He3abf[x]/Hmass/.{Hmass-> 3.0160293 au}/.{au->1.660539 10^-27(*kg*)}
 C12nd[x_]:=SMDi[x]C12abf[x]/Hmass/.{Hmass-> 12 au}/.{au->1.660539 10^-27(*kg*)}
 N14nd[x_]:=SMDi[x]N14abf[x]/Hmass/.{Hmass-> 14.003074 au}/.{au->1.660539 10^-27(*kg*)}
 O16nd[x_]:=SMDi[x]O16abf[x]/Hmass/.{Hmass-> 15.994915 au}/.{au->1.660539 10^-27(*kg*)}
-nd[y_,i_]:={Hold[Hnd[x]],Hold[He4nd[x]],Hold[He3nd[x]],Hold[C12nd[x]],Hold[N14nd[x]],Hold[O16nd[x]]}[[i]]/.{x-> y}//ReleaseHold;
-ZN:={1,2,2,6,7,8};
-mN:={1.007825 au,4.002602 au,3.0160293 au,12 au,14.003074 au,15.994915 au }/.{au-> 0.9314941 (*GeV*)};
-AN:={1,4,3,12,14,16};
-(*SMDi[0.00000001]
-NIntegrate[O16nd[x]4\[Pi] x^2,{x,0,SR}]*Hmass/.{Hmass\[Rule] 16 au}/.{au\[Rule]1.660539 10^-27(*kg*)}*)
-
+nd[y_,i_]:=Join[{Hold[Hnd[x]],Hold[He4nd[x]],Hold[He3nd[x]],Hold[C12nd[x]],Hold[N14nd[x]],Hold[O16nd[x]]},ndtab][[i]]/.{x-> y}//ReleaseHold;
+(*These lists are for:
+{1 H1, 2 He4, 3 He3, 4 C12, 5 N14, 6 O16, 7 Mg, 8 Si, 9 P, 10 S, 11 K, 12 Ca, 13 Sc, 14 Ti, 15 V, 16 Cr, 17 Mn, 18 Fe, 19 Co, 20 Ni}*)
+ZN:={1,2,2,6,7,8,12,14,15,16,19,20,21,22,23,24,25,26,27,28};
+mN:={1.007825 ,4.002602,3.0160293,12,14.003074,15.994915,24.305, 28.085,30.974,32.06,39.098,40.078,44.956,47.867,50.942,51.996,54.938,55.845,58.933,58.693}au/.{au-> 0.9314941 (*GeV*)};
+AN:={1,4,3,12,14,16,24,28,31,32,39,40,45,48,51,52,55,56,59,59};
+(*LogLogPlot[{Hnd[r],He4nd[r],He3nd[r],C12nd[r],N14nd[r],O16nd[r],Mgnd[r],Sind[r]},{r,0,SR}]*)
 
 
 (* ::Input::Initialization:: *)
@@ -174,7 +187,7 @@ NIntegrate[
 integrandr[r,i]integrandu[r,u]d\[Sigma]dE[r,u,m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],ER,mNt,ZNt,ENt]HeavisideTheta[Emax[r,u,m\[Chi],mNt]-Emin[r,u,m\[Chi],mNt]],
 {r,0,SR},{u,0,(*upint*)2upintHS[m\[Chi],mNt]},{ER,Emin[r,u,m\[Chi],mNt],Emax[r,u,m\[Chi],mNt]},WorkingPrecision->4,Method-> {Automatic,"SymbolicProcessing"->0}]]/.{n\[Chi]-> \[Rho]\[Chi]/m\[Chi]};
 (*AbsoluteTiming[CNcap[tm\[Chi],tmA,t\[Epsilon],t\[Alpha]\[Chi],1]]*)
-CTcap[m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_]:=Sum[CNcap[m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],i],{i,1,6}];
+CTcap[m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_]:=Sum[CNcap[m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],i],{i,1,Length[ZN]}];
 (*AbsoluteTiming[CTcap[tm\[Chi],tmA,t\[Epsilon],t\[Alpha]\[Chi]]]*)
 (*AbsoluteTiming[CNcap[tm\[Chi],tmA,t\[Epsilon],t\[Alpha]\[Chi],6]]*)
 \[Sigma]vB[m\[Chi]_,mA_,\[Alpha]\[Chi]_]:=(\[Pi] \[Alpha]\[Chi]^2)/m\[Chi]^2 (1-mA^2/m\[Chi]^2)^(3/2)/(1-mA^2/(2m\[Chi]^2))^2 \[HBar]^2 c^3/.{\[HBar]-> 6.582119 10^-22 0.001}/.{c-> 3 10^8};
