@@ -22,7 +22,7 @@
 (* ::Input::Initialization:: *)
 SetDirectory[NotebookDirectory[]];
 
-input=Import["input"];
+input=Import["anninput"];
 If[FileExistsQ["ann"],DeleteFile["ann"]]
 build = input[[1,2]];
 inm\[Chi]=input[[2,2]];
@@ -55,7 +55,7 @@ N14abf=Interpolation[N14ab];
 O16abf=Interpolation[O16ab];
 
 (*Solar mass density importing data*)
-SMD=Import["data/SolarMassDensity.csv"](*//ToExpression*)(*kg/m^3, r (m)*);
+SMD=Import["data/SolarMassDensity.csv"](*//ToExpression*)(*r/Subscript[R, \[CircleDot]], kg/m^3*);
 SMDtab=Table[{SMD[[i,1]]*SR,SMD[[i,2]]},{i,1,Length[SMD]}];
 SMDi=Interpolation[SMDtab,InterpolationOrder->1];
 SM=NIntegrate[SMDi[x]4\[Pi] x^2,{x,0,SR}];

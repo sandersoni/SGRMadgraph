@@ -20,10 +20,14 @@
 
 
 (* ::Input::Initialization:: *)
-SetDirectory[Directory[]];
+SetDirectory[NotebookDirectory[]];
+
+$spectruminputfile="spectruminput.mx";
 
 nevents=10000; (*number of events per mg5 run*)
-parameters={{"mxd",10.^(3+2/49.*20),10.^5,30},{"gsm",10.^-12,5*10.^-10,50},{"adm"},{"mdvb"}};(*parameters to be tracked. First two have syntax {"name", scan start, scan end, number of steps}. To not scan set start = end and steps = Null*)
+parameters=Import[$spectruminputfile]
+(*parameters={{"mxd",10.^5,10.^5,Null},{"gsm",4 10.^-11,4 10.^-11,Null},{"adm"},{"mdvb"}}*)
+(*parameters to be tracked. First two have syntax {"name", scan start, scan end, number of steps}. To not scan set start = end and steps = Null*)
 intab=Table[{10.^par1,10.^par2,0.035 10.^par1/1000.,0.5},{par1,Log10[parameters[[1,2]]],Log10[parameters[[1,3]]],If[parameters[[1,2]]!=parameters[[1,3]],(Log10[parameters[[1,3]]]-Log10[parameters[[1,2]]])/(parameters[[1,4]]-1.),Null]},{par2,Log10[parameters[[2,2]]],Log10[parameters[[2,3]]],If[parameters[[2,2]]!=parameters[[2,3]],(Log10[parameters[[2,3]]]-Log10[parameters[[2,2]]])/(parameters[[2,4]]-1.),Null]}];
 If[Length[Dimensions[intab]]==3,
 intab=Flatten[intab,1]](*intab is the table of parameters to be input into madgraph for the scan.*);
@@ -37,7 +41,7 @@ hawc={{0.5,2.2 10^-12},{1.6,8.8 10^-13},{5.0,2.8 10^-13},{15.7,8.1 10^-14},{50,6
 (*TeV / cm^2 / s for each bin, first number in element is left side of bin*)
 (*Do[*)
 $mg5outputfile = "dvb";
-$inputfile="input";
+$inputfile="anninput";
 $mg5runfile="mg5run";
 $pythiaoutputfile="pythiaoutput";
 $pythonoutputfile="photonenergy";
@@ -46,6 +50,8 @@ $debugfile = "debug"<>$mg5outputfile;
 build=0;
 talpha="thermal";
 au=1.49598 10^11 *100;(*distance from earth to sun in cm*)
+aum=1.49598 10^11 ;(*distance from earth to sun in m*)
+SR=6.957 10^8;(*Solar radius in m*)
 If[FileExistsQ[$debugfile],DeleteFile[$debugfile]];
 
 
@@ -106,10 +112,20 @@ par=ToExpression[StringReplace[str,{"e+"-> "*10^","e-"-> "*10^-"}]];
 Close[fno];
 par
 )
+
 readallparameters[path_]:=(
 Table[readparameter[path,parameters[[i,1]]],{i,1,Length[parameters]}])
 (*readallparameters[fnb[[1]]]*)
 
+readwidth[path_,PDG_]:=(fno=OpenRead[path];
+SetStreamPosition[fno,0];
+fnf=Find[fno,"DECAY "<>" "<>PDG];
+str=StringTake[fnf,{StringPosition[fnf,PDG][[1,2]]+4,StringPosition[fnf,PDG][[1,2]]+15}];
+width=ToExpression[StringReplace[str,{"e+"-> "*10^","e-"-> "*10^-"}]];
+Close[fno];
+width
+)
+(*readwidth["dvb/Events/run_01/run_01_tag_1_banner.txt","100001"]*)
 
 
 (* ::Input::Initialization:: *)
@@ -125,6 +141,7 @@ m\[Chi]read=readparameter[fnb[[fni]],"mxd"];
 mAread=readparameter[fnb[[fni]],"mdvb"];
 admread=readparameter[fnb[[fni]],"adm"];
 gsmread=readparameter[fnb[[fni]],"gsm"];
+widthread=readwidth[fnb[[fni]],"100001"];
 If[FileExistsQ[$pythiaoutputfile<>ToString[fni]],DeleteFile[$pythiaoutputfile<>ToString[fni]]];
 Run["gzip -d < "<>fn[[fni]]<>"/tag_1_pythia8_events.hepmc.gz > ./"<>$pythiaoutputfile<>ToString[fni]];
 If[FileExistsQ[$pythonoutputfile<>ToString[fni]],DeleteFile[$pythonoutputfile<>ToString[fni]]];
@@ -144,8 +161,13 @@ annin=Import["ann","Table"]//ToExpression;
 annrate=annin[[1,1]](*DM annihilation rate per second*);
 sigmacm=annin[[2,1]](*DD \[Sigma] in cm^2*);
 taurat=annin[[3,1]](*ratio of equilibrium time over lifetime of sun*);
-eflux=Table[photonE[[i]]/nevents*annrate 1/(4\[Pi] au^2),{i,1,Length[photonE]}];
-outlist={m\[Chi]read,mAread,admread,gsmread,annrate,eflux,sigmacm,taurat};
+\[Tau]=\[HBar]/(widthread (*GeV*) (10^9)(*eV/GeV*) )/.{\[HBar]-> 4.135667662 10^-15(*eV s*)};
+\[Gamma]=m\[Chi]read/mAread;
+vel=c Sqrt[1-1/\[Gamma]^2]/.{c-> 3 10^8(*m/s*)};
+Pr[d_]:=Exp[-d/( vel \[Gamma] \[Tau] )](*Probability it has survived by distance d*);
+Prdetect=Pr[SR]-Pr[aum](*How many decay between the surface of the sun and the distance to earth*);
+eflux=Table[photonE[[i]]/nevents*annrate 1/(4\[Pi] au^2) Prdetect,{i,1,Length[photonE]}];
+outlist={m\[Chi]read,mAread,admread,gsmread,annrate,eflux,sigmacm,taurat,widthread};
 Print[outlist];
 results=OpenAppend[$resultsfile,PageWidth-> 500];
 Write[results,outlist];
@@ -182,3 +204,6 @@ pythiaread[];
 ,{i,1,Length[intab],10}]
 )
 finalscan[]
+
+
+
