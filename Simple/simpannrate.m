@@ -20,7 +20,7 @@
 
 
 (* ::Input::Initialization:: *)
-SetDirectory[Directory[]];
+SetDirectory[NotebookDirectory[]];
 (*
 input=Import["anninput"];
 If[FileExistsQ["ann"],DeleteFile["ann"]]
@@ -28,6 +28,8 @@ build = input[[1,2]];
 inm\[Chi]=input[[2,2]];
 in\[Sigma]SI=input[[3,2]];
 in\[Sigma]SD=input[[4,2]];*)
+
+build=0;
 
 k=2.5; (*See 1602.01465 Eq. 15/16 for what these constants are*)
 u0 = 245 10^3; 
@@ -186,7 +188,7 @@ d\[Sigma]DDdE[u,m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],ER,mN,ZN,EN]integranduDD[u]
 \[CapitalDelta]max[r_,u_,m\[Chi]_,mi_]:=(4 mi m\[Chi])/(m\[Chi] + mi)^2;
 \[CapitalDelta]min[r_,u_,m\[Chi]_,mi_]:=u^2/(u^2+vei[r]^2);
 Pri[r_,u_,m\[Chi]_,mi_]:=Max[0,(\[CapitalDelta]max[r,u,m\[Chi],mi]-\[CapitalDelta]min[r,u,m\[Chi],mi])/\[CapitalDelta]max[r,u,m\[Chi],mi]];
-\[Sigma]i[m\[Chi]_,i_,\[Sigma]SI_,\[Sigma]SD_,mi_,A_]:=If[i==1,\[Sigma]SI+\[Sigma]SD,((A^2) \[Sigma]SI ((mi/mp)^2) ((mp+m\[Chi])^2) )/(mi+m\[Chi])^2+((A^2) \[Sigma]SD ((mp+m\[Chi])^2) )/(mi+m\[Chi])^2](*m^2*);
+\[Sigma]i[m\[Chi]_,i_,\[Sigma]SI_,\[Sigma]SD_,mi_,A_]:=If[i==1,\[Sigma]SI+\[Sigma]SD,((A^2) \[Sigma]SI ((mi/mp)^2) ((mp+m\[Chi])^2) )/(mi+m\[Chi])^2(*+(((A^2)\[Sigma]SD ((mp+m\[Chi])^2) )/(mi+m\[Chi])^2)*)](*m^2*);
 CNcap[m\[Chi]_,i_,\[Sigma]SI_,\[Sigma]SD_]:=n\[Chi] Block[ {mNt,ZNt,ANt,ENt},
 mNt=mN[[i]];
 ZNt=ZN[[i]];
@@ -195,6 +197,7 @@ ENt=EN[ANt];
 \[Sigma]i[m\[Chi],i,\[Sigma]SI,\[Sigma]SD,mNt,ANt] NIntegrate[
 integrandr[r,i]integrandu[r,u]Pri[r,u,m\[Chi],mNt],
 {r,0,SR},{u,0,(*upint*)2upintHS[m\[Chi],mNt]},WorkingPrecision->4,Method-> {Automatic,"SymbolicProcessing"->0}]]/.{n\[Chi]-> \[Rho]\[Chi]/m\[Chi]};
+
 (*AbsoluteTiming[CNcap[tm\[Chi],tmA,t\[Epsilon],t\[Alpha]\[Chi],1]]*)
 CTcap[m\[Chi]_,\[Sigma]SI_,\[Sigma]SD_]:=Sum[CNcap[m\[Chi],i,\[Sigma]SI,\[Sigma]SD],{i,1,Length[ZN]}];
 (*AbsoluteTiming[CTcap[tm\[Chi],tmA,t\[Epsilon],t\[Alpha]\[Chi]]]*)
@@ -224,7 +227,8 @@ d\[Sigma]DDdE[u,m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],ER,mN,ZN,EN]integranduDD[u]
 (*out\[Sigma]=\[Sigma]DD[inm\[Chi],inmA,inep,in\[Alpha]\[Chi],mp,1.,EN[1.]]10^4(*in cm^2*)(*m^2(1 pb)/(10^-40m^2)*);*)
 (*out\[CapitalGamma]ann = \[CapitalGamma]ann[inm\[Chi],in\[Sigma]SI,in\[Sigma]SD]*)
 (*out\[Tau]rat=\[Tau]rat[inm\[Chi],inmA,inep,in\[Alpha]\[Chi]];*)
-(*Export["ann",{out\[CapitalGamma]ann},"Table"];*)
+Export["ann",\[CapitalGamma]ann,"Table"];
+(*CTcap[1000.,10^-47,0.]*)
 
 
 

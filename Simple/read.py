@@ -41,12 +41,14 @@ print("Final particle PDGs:\n", particlespd['pdg'].value_counts())
 #photonsE is energy of photons for bins 0-0.5, 0.5-1.6, 1.6-5, 5-15.7, 15.7-50, and 50-158.1 TeV
 photons = [p['energy'] for p in particles if p['pdg'] == 22]
 # print('{} final state photons'.format(len(photons)))
+dlogE = 0.5
 photonsE = []
-photonsE.append(sum([e for e in photons if 500 < e < 1600]))
-photonsE.append(sum([e for e in photons if  1600  < e < 5000]))
-photonsE.append(sum([e for e in photons if  5000  < e < 15700]))
-photonsE.append(sum([e for e in photons if  15700  < e < 50000]))
-photonsE.append(sum([e for e in photons if  50000  < e < 158100]))
+photonsE.append(sum([e for e in photons if 500 < e < 1600])/dlogE)
+photonsE.append(sum([e for e in photons if  1600  < e < 5000])/dlogE)
+photonsE.append(sum([e for e in photons if  5000  < e < 15700])/dlogE)
+photonsE.append(sum([e for e in photons if  15700  < e < 50000])/dlogE)
+photonsE.append(sum([e for e in photons if  50000  < e < 158100])/dlogE)
+photonsE.append(sum([e for e in photons if  158100 < e])/dlogE)
 #print(photonsE)
 outstr =  sys.argv[2]
 resultsFile = open(outstr,'w')
