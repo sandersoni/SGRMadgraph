@@ -20,18 +20,17 @@
 
 
 (* ::Input::Initialization:: *)
-SetDirectory[NotebookDirectory[]];
+SetDirectory[Directory[]];
 
 $spectruminputfile="spectruminput.mx";
 
 nevents=10000; (*number of events per mg5 run*)
 parameters=Import[$spectruminputfile]
-(*parameters={{"mxd",10.^5,10.^5,Null},{"gsm",4 10.^-11,4 10.^-11,Null},{"adm"},{"mdvb"}}*)
+(*parameters={{"mxd",10.^5,10.^5,Null},{"gsm",10.^-10,10.^-10,Null},{"adm"},{"mdvb"}}*)
 (*parameters to be tracked. First two have syntax {"name", scan start, scan end, number of steps}. To not scan set start = end and steps = Null*)
-intab=Table[{10.^par1,10.^par2,0.035 10.^par1/1000.,0.5},{par1,Log10[parameters[[1,2]]],Log10[parameters[[1,3]]],If[parameters[[1,2]]!=parameters[[1,3]],(Log10[parameters[[1,3]]]-Log10[parameters[[1,2]]])/(parameters[[1,4]]-1.),Null]},{par2,Log10[parameters[[2,2]]],Log10[parameters[[2,3]]],If[parameters[[2,2]]!=parameters[[2,3]],(Log10[parameters[[2,3]]]-Log10[parameters[[2,2]]])/(parameters[[2,4]]-1.),Null]}];
+intab=Table[{10.^par1,10.^par2,0.024 10.^par1/1000.,1.},{par1,Log10[parameters[[1,2]]],Log10[parameters[[1,3]]],If[parameters[[1,2]]!=parameters[[1,3]],(Log10[parameters[[1,3]]]-Log10[parameters[[1,2]]])/(parameters[[1,4]]-1.),Null]},{par2,Log10[parameters[[2,2]]],Log10[parameters[[2,3]]],If[parameters[[2,2]]!=parameters[[2,3]],(Log10[parameters[[2,3]]]-Log10[parameters[[2,2]]])/(parameters[[2,4]]-1.),Null]}];
 If[Length[Dimensions[intab]]==3,
 intab=Flatten[intab,1]](*intab is the table of parameters to be input into madgraph for the scan.*);
-
 (*fixedform is what makes the numbers nice to print to a file*)
 StringPadLeft["",1];(*this must be evaluated first for no evident reason*)fixedform[numd_,data_]:=Module[{ef},ef[s_String/;StringTake[s,1]=="-"]:="-"<>StringPadLeft[StringTake[s,{2,-1}],2,"0"];
 ef[s_String]:="+"<>StringPadLeft[s,2,"0"];
@@ -59,7 +58,8 @@ If[FileExistsQ[$debugfile],DeleteFile[$debugfile]];
 If[FileExistsQ["pythia8_card_"<>$mg5outputfile<>".dat"],DeleteFile["pythia8_card_"<>$mg5outputfile<>".dat"]];
 CopyFile["pythia8_card_default.dat","pythia8_card_"<>$mg5outputfile<>".dat"];
 pythiacard=OpenAppend["pythia8_card_"<>$mg5outputfile<>".dat",PageWidth-> 500];
-WriteString[pythiacard,"ResonanceWidths:minWidth = 1e-30"];(*This enables particles with very small widths to still decay by avoiding their width being set to zero for being below the default min of 1e-20*);
+WriteString[pythiacard,"ResonanceWidths:minWidth = 1e-30"];
+WriteString[pythiacard,"\n"<>"Check:event = off"];(*This enables particles with very small widths to still decay by avoiding their width being set to zero for being below the default min of 1e-20*);
 Close[pythiacard];
 
 
@@ -146,7 +146,7 @@ If[FileExistsQ[$pythiaoutputfile<>ToString[fni]],DeleteFile[$pythiaoutputfile<>T
 Run["gzip -d < "<>fn[[fni]]<>"/tag_1_pythia8_events.hepmc.gz > ./"<>$pythiaoutputfile<>ToString[fni]];
 If[FileExistsQ[$pythonoutputfile<>ToString[fni]],DeleteFile[$pythonoutputfile<>ToString[fni]]];
 Run["python read.py "<>$pythiaoutputfile<>ToString[fni]<>" "<>$pythonoutputfile<>ToString[fni]];
-DeleteFile[$pythiaoutputfile<>ToString[fni]];
+(*DeleteFile[$pythiaoutputfile<>ToString[fni]];*)
 photonE=Flatten[Import[$pythonoutputfile<>ToString[fni]]];
 (*Print[{m\[Chi]read,mAread,admread,gsmread,photonE}];*)
 If[FileExistsQ[$inputfile],DeleteFile[$inputfile]];

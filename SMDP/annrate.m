@@ -28,7 +28,7 @@ build = input[[1,2]];
 inm\[Chi]=input[[2,2]];
 inmA=input[[3,2]];
 inep=input[[5,2]];
-in\[Alpha]\[Chi]=If[StringMatchQ[ToString[input[[4,2]]],"thermal"],0.035 inm\[Chi]/1000,input[[4,2]]];
+in\[Alpha]\[Chi]=If[StringMatchQ[ToString[input[[4,2]]],"thermal"],0.022 inm\[Chi]/1000,input[[4,2]]];
 
 
 k=2.5; (*See 1602.01465 Eq. 15/16 for what these constants are*)
@@ -93,8 +93,8 @@ If[build==1,
 Mtab=Table[{r,NIntegrate[SMDi[rp]4\[Pi] rp^2,{rp,0,r}]},{r,0,SR,SR/100.}];
 Mi=Interpolation[Mtab,InterpolationOrder->1];
 Export["data/Mass.csv",Mtab,"CSV"];
-vetab= Table[{r,Sqrt[-2(NIntegrate[(Gconst Mi[rp])/rp^2,{rp,SR,r}]-(Gconst Mi[SR])/SR)]},{r,SR/100,SR,SR/100}];
-vetab=Prepend[vetab,{0.0001,Sqrt[-2(NIntegrate[(Gconst Mi[rp])/rp^2,{rp,SR,0.001}]-(Gconst Mi[SR])/SR)]}];
+vetab= Table[{r,\[Sqrt](-2(NIntegrate[(Gconst Mi[rp])/rp^2,{rp,SR,r}]-(Gconst Mi[SR])/SR))},{r,SR/100,SR,SR/100}];
+vetab=Prepend[vetab,{0.0001,\[Sqrt](-2(NIntegrate[(Gconst Mi[rp])/rp^2,{rp,SR,0.001}]-(Gconst Mi[SR])/SR))}];
 Export["data/Escape.csv",vetab,"CSV"];]
 
 
@@ -108,7 +108,7 @@ f[u_]:=normconstant (Exp[(vgal^2-u^2)/(k u0^2)]-1)^k HeavisideTheta[vgal-u];
 usolve=Solve[u^2+uS^2+2u uS c==vgal^2,u][[2]];
 upint=u/.usolve/.{c->-1};
 Export["data/upint.csv",upint,"CSV"];
-fS[u_] := 1/2 NIntegrate[f[Sqrt[u^2+uS^2+2u uS c]],{c,-1,1}]
+fS[u_] := 1/2 NIntegrate[f[Sqrt[u^2+uS^2+2u uS c]],{c,-1,1}];
 ftab=Table[{u,f[u]},{u,0.,upint,upint/1000}];
 Export["data/f.csv",ftab,"CSV"];
 fStab=Table[{u,fS[u]},{u,0.,upint,upint/1000}];
@@ -158,7 +158,7 @@ Emin[r_,u_,m\[Chi]_,mn_]:=(*1./GeV*)(*Desired units of GeV*)1/2 m\[Chi] 1(*GeV*)
 (*AbsoluteTiming[Emin[tr,tu,tm\[Chi],tmN]]*)
 
 (*This finds an upper limit on u based on the heaviside theta*)
-(*Solve[Emax[0,u,m\[Chi],Nt]-Emin[0,u,m\[Chi],Nt]\[Equal]0,u]*)
+(*Solve[Emax[SR,u,m\[Chi],Nt]-Emin[SR,u,m\[Chi],Nt]\[Equal]0,u]*)
 (*/.{m\[Chi]\[Rule] inm\[Chi],Nt\[Rule] mNt}*)
 upintHS[m\[Chi]_,mNu_]:=((0.` +8.439776214093713`*^6 ) Sqrt[m\[Chi]] Sqrt[mNu])/((m\[Chi]+mNu) Sqrt[9.`- (36.` m\[Chi] mNu)/(m\[Chi]+mNu)^2]);
 
@@ -178,6 +178,7 @@ integrandr[r_,i_]:=4\[Pi] r^2 nd[r,i];
 integrandu[r_,u_]:=4\[Pi] u(u^2+vei[r]^2)fSi[u];
 d\[Sigma]dE[r_,u_,m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_,ER_,mn_,Zn_,En_]:= 8 \[Pi] \[Epsilon]^2 \[Alpha]\[Chi] \[Alpha] Zn^2 mn /((u^2+vei[r]^2)(2mn ER +mA^2)^2) Exp[-ER/En]\[HBar]^2 c^4/.{\[Alpha]-> 1/137.}/.{\[HBar]-> 6.582119 10^-22 0.001 }/.{c-> 3 10^8};
 (*d\[Sigma]dE[tm\[Chi],tmN,tAN,tmA,t\[Epsilon],t\[Alpha]\[Chi],tr,tu,Emax[tu,tm\[Chi],tmN,tr]]10^-410^5*)
+
 CNcap[m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_,i_]:=n\[Chi] Block[ {mNt,ZNt,ANt,ENt},
 mNt=mN[[i]];
 ZNt=ZN[[i]];
@@ -185,15 +186,15 @@ ANt=AN[[i]];
 ENt=EN[ANt];
 NIntegrate[
 integrandr[r,i]integrandu[r,u]d\[Sigma]dE[r,u,m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],ER,mNt,ZNt,ENt]HeavisideTheta[Emax[r,u,m\[Chi],mNt]-Emin[r,u,m\[Chi],mNt]],
-{r,0,SR},{u,0,(*upint*)2upintHS[m\[Chi],mNt]},{ER,Emin[r,u,m\[Chi],mNt],Emax[r,u,m\[Chi],mNt]},WorkingPrecision->4,Method-> {Automatic,"SymbolicProcessing"->0}]]/.{n\[Chi]-> \[Rho]\[Chi]/m\[Chi]};
+{r,0,SR},{u,0,(*upint*)upintHS[m\[Chi],mNt]},{ER,Emin[r,u,m\[Chi],mNt],Emax[r,u,m\[Chi],mNt]},WorkingPrecision->5,Method-> {Automatic,"SymbolicProcessing"->0}]]/.{n\[Chi]-> \[Rho]\[Chi]/m\[Chi]};
 (*AbsoluteTiming[CNcap[tm\[Chi],tmA,t\[Epsilon],t\[Alpha]\[Chi],1]]*)
-CTcap[m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_]:=Sum[CNcap[m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],i],{i,1,Length[ZN]}];
+CTcap[m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_]:=Sum[CNcap[m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],i],{i,1,6(*Length[ZN]*)}];
 (*AbsoluteTiming[CTcap[tm\[Chi],tmA,t\[Epsilon],t\[Alpha]\[Chi]]]*)
 (*AbsoluteTiming[CNcap[tm\[Chi],tmA,t\[Epsilon],t\[Alpha]\[Chi],6]]*)
 \[Sigma]vB[m\[Chi]_,mA_,\[Alpha]\[Chi]_]:=(\[Pi] \[Alpha]\[Chi]^2)/m\[Chi]^2 (1-mA^2/m\[Chi]^2)^(3/2)/(1-mA^2/(2m\[Chi]^2))^2 \[HBar]^2 c^3/.{\[HBar]-> 6.582119 10^-22 0.001}/.{c-> 3 10^8};
 (*\[Sigma]vB[tm\[Chi],tmA,t\[Alpha]\[Chi]]*)
 SE[m\[Chi]_,mA_,\[Alpha]\[Chi]_,v_]:=\[Pi]/a Sinh[2\[Pi] a c]/(Cosh[2 \[Pi] a c] - Cos[2\[Pi] Sqrt[c - a^2 c^2]])(*(\[Pi] \[Alpha]\[Chi]/v)/(1-Exp[-\[Pi] \[Alpha]\[Chi]/v])*)/.{a-> v/(2\[Alpha]\[Chi]),c-> (6 \[Alpha]\[Chi] m\[Chi])/(\[Pi]^2 mA)};
-SEav[m\[Chi]_,mA_,\[Alpha]\[Chi]_]:=1/(2\[Pi] (5.1 10^-5 Sqrt[1000./m\[Chi]])^2)^(3/2) NIntegrate[4\[Pi] v^2 Exp[-1/2 v^2/(5.1 10^-5 Sqrt[1000./m\[Chi]])^2] SE[m\[Chi],mA,\[Alpha]\[Chi],v],{v,0,0.005},WorkingPrecision-> 5,Method-> {Automatic,"SymbolicProcessing"->0}]
+SEav[m\[Chi]_,mA_,\[Alpha]\[Chi]_]:=1/(2\[Pi] (5.1 10^-5 Sqrt[1000./m\[Chi]])^2)^(3/2) NIntegrate[4\[Pi] v^2 Exp[-1/2 v^2/(5.1 10^-5 Sqrt[1000./m\[Chi]])^2] SE[m\[Chi],mA,\[Alpha]\[Chi],v],{v,0,0.005},WorkingPrecision-> 4,Method-> {Automatic,"SymbolicProcessing"->0}]
 \[Sigma]v[m\[Chi]_,mA_,\[Alpha]\[Chi]_]:=SEav[m\[Chi],mA,\[Alpha]\[Chi]] \[Sigma]vB[m\[Chi],mA,\[Alpha]\[Chi]]
 GN=6.67408 10^-11 (*m^3/(kg s^2)*);
 \[Rho]S=151  10^-3 10^6(*kg/m^3*);
@@ -210,13 +211,14 @@ EDDmax[u_,m\[Chi]_,mn_]:=(*1./GeV*)(*Desired units of GeV*)(2 (\[Mu]N^2)(*GeV^2/
 d\[Sigma]DDdE[u_,m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_,ER_,mn_,Zn_,En_]:= 8 \[Pi] \[Epsilon]^2 \[Alpha]\[Chi] \[Alpha] Zn^2 mn /((u^2)(2mn ER +mA^2)^2) Exp[-ER/En]\[HBar]^2 c^4/.{\[Alpha]-> 1/137.}/.{\[HBar]-> 6.582119 10^-22 0.001 }/.{c-> 2.99792458 10^8};
 integranduDD[u_]:=4\[Pi] (u^2)fSi[u];
 \[Sigma]DD[m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_,mN_,ZN_,EN_]:=NIntegrate[
-d\[Sigma]DDdE[u,m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],ER,mN,ZN,EN]integranduDD[u],{u,0,(*upint*)10upintHS[m\[Chi],mN]},
-{ER,0,EDDmax[u,m\[Chi],mN]},WorkingPrecision->4,Method-> {Automatic,"SymbolicProcessing"->0}]/.{n\[Chi]-> \[Rho]\[Chi]/m\[Chi]}
+d\[Sigma]DDdE[u,m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],ER,mN,ZN,EN]integranduDD[u],{u,0,upintHS[m\[Chi],mN]},
+{ER,0,EDDmax[u,m\[Chi],mN]},WorkingPrecision->4,Method-> {Automatic,"SymbolicProcessing"->0}];
 mp=0.938272;
 out\[Sigma]=\[Sigma]DD[inm\[Chi],inmA,inep,in\[Alpha]\[Chi],mp,1.,EN[1.]]10^4(*in cm^2*)(*m^2(1 pb)/(10^-40m^2)*);
 out\[CapitalGamma]ann = \[CapitalGamma]ann[inm\[Chi],inmA,inep,in\[Alpha]\[Chi]];
 out\[Tau]rat=\[Tau]rat[inm\[Chi],inmA,inep,in\[Alpha]\[Chi]];
 Export["ann",{out\[CapitalGamma]ann,out\[Sigma],out\[Tau]rat},"Table"];
+CTcap[inm\[Chi],inmA,inep,in\[Alpha]\[Chi]]
 
 
 

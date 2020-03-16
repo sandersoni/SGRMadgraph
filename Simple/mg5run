@@ -1,6 +1,6 @@
 import model ./SMDP_UFO/
 set automatic_html_opening False
-generate ~xd ~xd~ > dvb dvb
+generate e+ e- > dvb dvb
 output dvb
 launch dvb
 shower = Pythia8
@@ -13,82 +13,10 @@ set etaj -1.0
 set etaa -1.0
 set etal -1.0
 ./pythia8_card_dvb.dat
-set mxd  6.17754E+04
-set gsm  1.00000E-09
-set adm  2.16214E+00
-set mdvb  5.00000E-01
-set ebeam1  6.17760E+04
-set ebeam2  6.17760E+04
-set WDVB Auto
-launch dvb
-set mxd  6.51716E+04
-set gsm  1.00000E-09
-set adm  2.28100E+00
-set mdvb  5.00000E-01
-set ebeam1  6.51722E+04
-set ebeam2  6.51722E+04
-set WDVB Auto
-launch dvb
-set mxd  6.87545E+04
-set gsm  1.00000E-09
-set adm  2.40641E+00
-set mdvb  5.00000E-01
-set ebeam1  6.87552E+04
-set ebeam2  6.87552E+04
-set WDVB Auto
-launch dvb
-set mxd  7.25343E+04
-set gsm  1.00000E-09
-set adm  2.53870E+00
-set mdvb  5.00000E-01
-set ebeam1  7.25351E+04
-set ebeam2  7.25351E+04
-set WDVB Auto
-launch dvb
-set mxd  7.65220E+04
-set gsm  1.00000E-09
-set adm  2.67827E+00
-set mdvb  5.00000E-01
-set ebeam1  7.65228E+04
-set ebeam2  7.65228E+04
-set WDVB Auto
-launch dvb
-set mxd  8.07289E+04
-set gsm  1.00000E-09
-set adm  2.82551E+00
-set mdvb  5.00000E-01
-set ebeam1  8.07297E+04
-set ebeam2  8.07297E+04
-set WDVB Auto
-launch dvb
-set mxd  8.51671E+04
-set gsm  1.00000E-09
-set adm  2.98085E+00
-set mdvb  5.00000E-01
-set ebeam1  8.51679E+04
-set ebeam2  8.51679E+04
-set WDVB Auto
-launch dvb
-set mxd  8.98493E+04
-set gsm  1.00000E-09
-set adm  3.14472E+00
-set mdvb  5.00000E-01
-set ebeam1  8.98502E+04
-set ebeam2  8.98502E+04
-set WDVB Auto
-launch dvb
-set mxd  9.47889E+04
-set gsm  1.00000E-09
-set adm  3.31761E+00
-set mdvb  5.00000E-01
-set ebeam1  9.47898E+04
-set ebeam2  9.47898E+04
-set WDVB Auto
-launch dvb
-set mxd  1.00000E+05
-set gsm  1.00000E-09
-set adm  3.50000E+00
-set mdvb  5.00000E-01
-set ebeam1  1.00001E+05
-set ebeam2  1.00001E+05
+set mxd  5.00000E+00
+set gsm  1.00000E+00
+set adm  2.40000E-02
+set mdvb  5.00000E+00
+set ebeam1  5.00005E+00
+set ebeam2  5.00005E+00
 set WDVB Auto

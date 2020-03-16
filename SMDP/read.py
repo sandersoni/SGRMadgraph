@@ -42,11 +42,11 @@ print("Final particle PDGs:\n", particlespd['pdg'].value_counts())
 photons = [p['energy'] for p in particles if p['pdg'] == 22]
 # print('{} final state photons'.format(len(photons)))
 photonsE = []
-photonsE.append(sum([e for e in photons if 500 < e < 1600]))
-photonsE.append(sum([e for e in photons if  1600  < e < 5000]))
-photonsE.append(sum([e for e in photons if  5000  < e < 15700]))
-photonsE.append(sum([e for e in photons if  15700  < e < 50000]))
-photonsE.append(sum([e for e in photons if  50000  < e < 158100]))
+photonsE.append((1.6 + 0.5)/2 * sum([e for e in photons if 500 < e < 1600])*0.001/(1.600 - 0.500))
+photonsE.append((5. + 1.6)/2 * sum([e for e in photons if  1600  < e < 5000])*0.001/(5. - 1.6))
+photonsE.append((15.7 + 5.)/2 * sum([e for e in photons if  5000  < e < 15700])*0.001/(15.7 - 5.))
+photonsE.append((50. + 15.7)/2 * sum([e for e in photons if  15700  < e < 50000])*0.001/(50. - 15.7))
+photonsE.append((158.1 + 50.)/2 * sum([e for e in photons if  50000  < e < 158100])*0.001/(158.1 - 50.))
 #print(photonsE)
 outstr =  sys.argv[2]
 resultsFile = open(outstr,'w')

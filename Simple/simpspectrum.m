@@ -24,11 +24,11 @@ SetDirectory[Directory[]];
 
 $spectruminputfile="spectruminput.mx";
 
-nevents=100000; (*number of events per mg5 run*)
+nevents=10000; (*number of events per mg5 run*)
 (*parameters=Import[$spectruminputfile]*)
-parameters={{"mxd",10.^5,10.^5,Null},{"gsm",10.^-0,10.^-0,Null},{"adm"},{"mdvb"}}
+parameters={{"mxd",0.5 10.^3,10.^6,100},{"gsm",10.^-0,10.^-0,Null},{"adm"},{"mdvb"}}
 (*parameters to be tracked. First two have syntax {"name", scan start, scan end, number of steps}. To not scan set start = end and steps = Null*)
-intab=Table[{10.^par1,10.^par2,0.024 10.^par1/1000.,0.05},{par1,Log10[parameters[[1,2]]],Log10[parameters[[1,3]]],If[parameters[[1,2]]!=parameters[[1,3]],(Log10[parameters[[1,3]]]-Log10[parameters[[1,2]]])/(parameters[[1,4]]-1.),Null]},{par2,Log10[parameters[[2,2]]],Log10[parameters[[2,3]]],If[parameters[[2,2]]!=parameters[[2,3]],(Log10[parameters[[2,3]]]-Log10[parameters[[2,2]]])/(parameters[[2,4]]-1.),Null]}];
+intab=Table[{10.^par1,10.^par2,0.024(*10.^par1/1000.*),1.},{par1,Log10[parameters[[1,2]]],Log10[parameters[[1,3]]],If[parameters[[1,2]]!=parameters[[1,3]],(Log10[parameters[[1,3]]]-Log10[parameters[[1,2]]])/(parameters[[1,4]]-1.),Null]},{par2,Log10[parameters[[2,2]]],Log10[parameters[[2,3]]],If[parameters[[2,2]]!=parameters[[2,3]],(Log10[parameters[[2,3]]]-Log10[parameters[[2,2]]])/(parameters[[2,4]]-1.),Null]}];
 If[Length[Dimensions[intab]]==3,
 intab=Flatten[intab,1]](*intab is the table of parameters to be input into madgraph for the scan.*);
 
@@ -60,7 +60,13 @@ If[FileExistsQ["pythia8_card_"<>$mg5outputfile<>".dat"],DeleteFile["pythia8_card
 CopyFile["pythia8_card_default.dat","pythia8_card_"<>$mg5outputfile<>".dat"];
 pythiacard=OpenAppend["pythia8_card_"<>$mg5outputfile<>".dat",PageWidth-> 500];
 WriteString[pythiacard,"ResonanceWidths:minWidth = 1e-30"];
-(*WriteString[pythiacard,"\n"<>"Check:event = off"];*)
+WriteString[pythiacard,"\n"<>"Check:event = off"];
+(*WriteString[pythiacard,"\n"<>"50:onMode = on"];*)
+(*WriteString[pythiacard,"\n"<>"100001:offIfMatch = 1 1"];*)
+
+(*WriteString[pythiacard,"\n"<>"100001:oneChannel = onMode 1. 0. 11 -11"];*)
+
+(*WriteString[pythiacard,"\n"<>"ParticleDecays:allowPhotonRadiation = on"];*)
 (*This enables particles with very small widths to still decay by avoiding their width being set to zero for being below the default min of 1e-20*);
 (*WriteString[pythiacard,"\n"<>"ParticleDecays:limitTau0 = off"];
 WriteString[pythiacard,"\n"<>"ParticleDecays:limitTau = off"];
@@ -88,13 +94,13 @@ mg5run={"import model ./SMDP_UFO/",
 "set ptj 0.0",
 "set pta 0.0",
 "set ptl 0.0",
-"set drll 0.0",
+(*"set drll 0.0",
 "set drjj 0.0",
 "set draj 0.0",
 "set drjl 0.0",
 "set dral 0.0",
 "set draa 0.0",
-"set r0gamma 0.01",
+"set r0gamma 0.01",*)
 "set etaj -1.0",
 "set etaa -1.0",
 "set etal -1.0",
@@ -169,7 +175,7 @@ annrate=annin\[LeftDoubleBracket]1,1\[RightDoubleBracket](*DM annihilation rate 
 sigmacm=annin\[LeftDoubleBracket]2,1\[RightDoubleBracket](*DD \[Sigma] in cm^2*);
 taurat=annin\[LeftDoubleBracket]3,1\[RightDoubleBracket](*ratio of equilibrium time over lifetime of sun*);
 *)
-spec=Table[photonE[[i]]/nevents*(*annrate*) 1/(4\[Pi] au^2),{i,1,Length[photonE]}](*This is the spectrum per annhilation*);
+spec=Table[photonE[[i]]/nevents*(*annrate*) 1/(4\[Pi] au^2),{i,1,Length[photonE]}](*This is the spectrum E^2dN/dE per annhilation at the earth*);
 outlist={m\[Chi]read,spec};
 Print[outlist];
 results=OpenAppend[$resultsfile,PageWidth-> 500];

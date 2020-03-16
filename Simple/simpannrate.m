@@ -94,8 +94,8 @@ If[build==1,
 Mtab=Table[{r,NIntegrate[SMDi[rp]4\[Pi] rp^2,{rp,0,r}]},{r,0,SR,SR/100.}];
 Mi=Interpolation[Mtab,InterpolationOrder->1];
 Export["data/Mass.csv",Mtab,"CSV"];
-vetab= Table[{r,Sqrt[-2(NIntegrate[(Gconst Mi[rp])/rp^2,{rp,SR,r}]-(Gconst Mi[SR])/SR)]},{r,SR/100,SR,SR/100}];
-vetab=Prepend[vetab,{0.0001,Sqrt[-2(NIntegrate[(Gconst Mi[rp])/rp^2,{rp,SR,0.001}]-(Gconst Mi[SR])/SR)]}];
+vetab= Table[{r,\[Sqrt](-2(NIntegrate[(Gconst Mi[rp])/rp^2,{rp,SR,r}]-(Gconst Mi[SR])/SR))},{r,SR/100,SR,SR/100}];
+vetab=Prepend[vetab,{0.0001,\[Sqrt](-2(NIntegrate[(Gconst Mi[rp])/rp^2,{rp,SR,0.001}]-(Gconst Mi[SR])/SR))}];
 Export["data/Escape.csv",vetab,"CSV"];]
 
 
@@ -199,7 +199,7 @@ integrandr[r,i]integrandu[r,u]Pri[r,u,m\[Chi],mNt],
 {r,0,SR},{u,0,(*upint*)2upintHS[m\[Chi],mNt]},WorkingPrecision->4,Method-> {Automatic,"SymbolicProcessing"->0}]]/.{n\[Chi]-> \[Rho]\[Chi]/m\[Chi]};
 
 (*AbsoluteTiming[CNcap[tm\[Chi],tmA,t\[Epsilon],t\[Alpha]\[Chi],1]]*)
-CTcap[m\[Chi]_,\[Sigma]SI_,\[Sigma]SD_]:=Sum[CNcap[m\[Chi],i,\[Sigma]SI,\[Sigma]SD],{i,1,Length[ZN]}];
+CTcap[m\[Chi]_,\[Sigma]SI_,\[Sigma]SD_]:=Sum[CNcap[m\[Chi],i,\[Sigma]SI,\[Sigma]SD],{i,1,Length[ZN]-14}];
 (*AbsoluteTiming[CTcap[tm\[Chi],tmA,t\[Epsilon],t\[Alpha]\[Chi]]]*)
 (*AbsoluteTiming[CNcap[tm\[Chi],tmA,t\[Epsilon],t\[Alpha]\[Chi],6]]*)
 (*\[Sigma]vB[m\[Chi]_,mA_,\[Alpha]\[Chi]_]:=(\[Pi] \[Alpha]\[Chi]^2)/m\[Chi]^2(1-mA^2/m\[Chi]^2)^(3/2)/(1-mA^2/(2m\[Chi]^2))^2\[HBar]^2c^3/.{\[HBar]\[Rule] 6.582119 10^-22 0.001}/.{c\[Rule] 3 10^8};

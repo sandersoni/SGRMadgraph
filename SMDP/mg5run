@@ -13,10 +13,82 @@ set etaj -1.0
 set etaa -1.0
 set etal -1.0
 ./pythia8_card_dvb.dat
-set mxd  1.00000E+05
-set gsm  1.00000E-09
-set adm  3.50000E+00
-set mdvb  5.00000E-01
-set ebeam1  1.00001E+05
-set ebeam2  1.00001E+05
+set mxd  4.45212E+05
+set gsm  3.16228E-08
+set adm  1.06851E+01
+set mdvb  1.00000E+00
+set ebeam1  4.45216E+05
+set ebeam2  4.45216E+05
+set WDVB Auto
+launch dvb
+set mxd  4.87096E+05
+set gsm  3.16228E-08
+set adm  1.16903E+01
+set mdvb  1.00000E+00
+set ebeam1  4.87101E+05
+set ebeam2  4.87101E+05
+set WDVB Auto
+launch dvb
+set mxd  5.32921E+05
+set gsm  3.16228E-08
+set adm  1.27901E+01
+set mdvb  1.00000E+00
+set ebeam1  5.32926E+05
+set ebeam2  5.32926E+05
+set WDVB Auto
+launch dvb
+set mxd  5.83057E+05
+set gsm  3.16228E-08
+set adm  1.39934E+01
+set mdvb  1.00000E+00
+set ebeam1  5.83063E+05
+set ebeam2  5.83063E+05
+set WDVB Auto
+launch dvb
+set mxd  6.37910E+05
+set gsm  3.16228E-08
+set adm  1.53098E+01
+set mdvb  1.00000E+00
+set ebeam1  6.37916E+05
+set ebeam2  6.37916E+05
+set WDVB Auto
+launch dvb
+set mxd  6.97923E+05
+set gsm  3.16228E-08
+set adm  1.67501E+01
+set mdvb  1.00000E+00
+set ebeam1  6.97930E+05
+set ebeam2  6.97930E+05
+set WDVB Auto
+launch dvb
+set mxd  7.63582E+05
+set gsm  3.16228E-08
+set adm  1.83260E+01
+set mdvb  1.00000E+00
+set ebeam1  7.63589E+05
+set ebeam2  7.63589E+05
+set WDVB Auto
+launch dvb
+set mxd  8.35418E+05
+set gsm  3.16228E-08
+set adm  2.00500E+01
+set mdvb  1.00000E+00
+set ebeam1  8.35426E+05
+set ebeam2  8.35426E+05
+set WDVB Auto
+launch dvb
+set mxd  9.14012E+05
+set gsm  3.16228E-08
+set adm  2.19363E+01
+set mdvb  1.00000E+00
+set ebeam1  9.14021E+05
+set ebeam2  9.14021E+05
+set WDVB Auto
+launch dvb
+set mxd  1.00000E+06
+set gsm  3.16228E-08
+set adm  2.40000E+01
+set mdvb  1.00000E+00
+set ebeam1  1.00001E+06
+set ebeam2  1.00001E+06
 set WDVB Auto

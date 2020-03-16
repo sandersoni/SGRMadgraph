@@ -25,7 +25,7 @@ with open("{}".format(sys.argv[1]), "r") as f:
             #     muons.append(float(data[5]))
             # elif
 particles.sort()
-print(particles)
+# print(particles)
 # particlespd = pd.DataFrame(particles)
 # print("Final particle PDGs:\n", particlespd["pdg"].value_counts())
 # particlespd.query("pdg == 100001")["energy"].hist(bins=[0, 500, 1600, 5000, 15700, 50000, 158100], log=True)
