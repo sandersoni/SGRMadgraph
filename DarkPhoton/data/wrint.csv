@@ -1,0 +1,1 @@
+"NIntegrate[4*Pi*r^2*O16nd[r]*wint[r], {r, 0, SR}]"

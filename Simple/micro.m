@@ -44,7 +44,7 @@ crossm2=crosspb*10^-36(*pb to cm^2*)*10^-4(*cm^2to m^2*);
 Close[str];
 SetDirectory[NotebookDirectory[]];
 {crossm2,caprate})
-inMXd=100000.;
+inMXd=10000.;
 inaDM=0.024/1000 inMXd;
 inMDVB=0.05;
 ingSM=10^-8.;
@@ -224,7 +224,7 @@ ENt=EN[ANt];
 integrandr[r,i]integrandu[r,u]Pri[r,u,m\[Chi],mNt],
 {r,0,SR},{u,0,(*upint*)upintHS[m\[Chi],mNt]},WorkingPrecision->4,Method-> {Automatic,"SymbolicProcessing"->0}]]/.{n\[Chi]-> \[Rho]\[Chi]/m\[Chi]};
 
-CTcap[m\[Chi]_,\[Sigma]SI_,\[Sigma]SD_]:=Sum[CNcap[m\[Chi],i,\[Sigma]SI,\[Sigma]SD],{i,4,4(*Length[ZN]*)}];
+CTcap[m\[Chi]_,\[Sigma]SI_,\[Sigma]SD_]:=Sum[CNcap[m\[Chi],i,\[Sigma]SI,\[Sigma]SD],{i,1,Length[ZN]}];
 
 \[CapitalGamma]ann [m\[Chi]_,\[Sigma]SI_,\[Sigma]SD_]:= 1/2 CTcap[m\[Chi],\[Sigma]SI,\[Sigma]SD](*Tanh[\[Tau]S/\[Tau][m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi]]]^2*)
 microsi[m\[Chi]_,i_]:=(\[Mu]p0=(m\[Chi] mN[[1]])/(m\[Chi] +mN[[1]]);
@@ -235,7 +235,7 @@ micropA0[m\[Chi]_]:=(\[Mu]p0=(m\[Chi] mN[[1]])/(m\[Chi] +mN[[1]]);
 
 
 (*Dark Photon Stuff*)
-EDDmax[u_,m\[Chi]_,mn_]:=(*1./GeV*)(*Desired units of GeV*)(2 (\[Mu]N^2)(*GeV^2/c^4*)( u^2)(*m^2/s^2*))/mn (*GeV/c^2*)  1/c^2/.{\[Mu]N-> (m\[Chi] mn)/(m\[Chi]+mn),c->2.99792458 10^8};
+EDDmax[u_,m\[Chi]_,mn_]:=(*1./GeV*)(*Desired units of GeV*)(2 (\[Mu]N^2)(*GeV^2/c^4*)( u^2+vEesc^2)(*m^2/s^2*))/mn (*GeV/c^2*)  1/c^2/.{\[Mu]N-> (m\[Chi] mn)/(m\[Chi]+mn),c->2.99792458 10^8};
 
 fnonorm[u_]:=(*norm*) (Exp[(vgal^2-u^2)/(k u0^2)]-1)^k HeavisideTheta[vgal-u];
 normconstant=1/NIntegrate[4\[Pi] u^2 fnonorm[u],{u,0,vgal}];
@@ -251,10 +251,12 @@ fSi=Interpolation[fStab];
 vEesc=11186.;
 
 integranduDD[u_]:=4\[Pi] (u^2+vEesc^2)fSi[u];
+
 d\[Sigma]DDdE[u_,m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_,ER_,mn_,Zn_,En_]:= 8 \[Pi] \[Epsilon]^2 \[Alpha]\[Chi] \[Alpha] Zn^2 mn /((u^2+vEesc^2)(2mn ER +mA^2)^2) Exp[-ER/En]\[HBar]^2 c^4/.{\[Alpha]-> 1/137.}/.{\[HBar]-> 6.582119 10^-22 0.001 }/.{c-> 2.99792458 10^8 };
 \[Sigma]DD[m\[Chi]_,mA_,\[Epsilon]_,\[Alpha]\[Chi]_,mN_,ZN_,EN_]:=NIntegrate[
 d\[Sigma]DDdE[vgal,m\[Chi],mA,\[Epsilon],\[Alpha]\[Chi],ER,mN,ZN,EN],
 {ER,0,10(*EDDmax[u,m\[Chi],mN]*)},WorkingPrecision->4,Method-> {Automatic,"SymbolicProcessing"->0}];
+
 
 \[Sigma]DD[inMXd,inMDVB,ingSM,inaDM,mN[[atomnumber]],ZN[[atomnumber]],EN[AN[[atomnumber]]]]
 
