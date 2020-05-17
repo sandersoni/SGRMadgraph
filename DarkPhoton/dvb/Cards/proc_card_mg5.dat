@@ -29,7 +29,7 @@ set gauge unitary
 set complex_mass_scheme False
 set max_npoint_for_channel 0
 import model /home/isanderson/Documents/Research/SGR/DarkPhoton/SMDP_U\
-FO
+FO_onlye
 define p = g u c d s u~ c~ d~ s~
 define j = g u c d s u~ c~ d~ s~
 define l+ = e+ mu+

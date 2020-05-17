@@ -25,8 +25,8 @@ Block MASS
    15 1.777000e+00 # MTA 
    23 9.118760e+01 # MZ 
    25 1.250000e+02 # MH 
+   50 1.505000e+02 # MDVB 
    52 3.000000e+02 # MXd 
-  100001 1.505000e+02 # MDVB 
 ##  Not dependent paramater.
 ## Those values should be edited following analytical the 
 ## analytical expression. Some generator could simply ignore 
@@ -52,7 +52,7 @@ DECAY   6 1.508336e+00
 DECAY  23 2.495200e+00 
 DECAY  24 2.085000e+00 
 DECAY  25 4.070000e-03 
-DECAY 100001 1.534000e+00 
+DECAY  50 1.534000e+00 
 ##  Not dependent paramater.
 ## Those values should be edited following analytical the 
 ## analytical expression. Some generator could simply ignore 
@@ -128,7 +128,7 @@ Block QNUMBERS 82  # ghG
         2 -1  # number of spin states (2S+1)
         3 8  # colour rep (1: singlet, 3: triplet, 8: octet)
         4 1  # Particle/Antiparticle distinction (0=own anti)
-Block QNUMBERS 100001  # DVB 
+Block QNUMBERS 50  # DVB 
         1 0  # 3 times electric charge
         2 3  # number of spin states (2S+1)
         3 1  # colour rep (1: singlet, 3: triplet, 8: octet)

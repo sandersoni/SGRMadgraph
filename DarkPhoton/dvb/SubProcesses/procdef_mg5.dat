@@ -27,7 +27,7 @@ done               # this tells MG there are no more procs
 # Model information                                                  *
 #*********************************************************************
 # Begin MODEL  # This is TAG. Do not modify this line
-SMDP_UFO
+SMDP_UFO_onlye
 # End   MODEL  # This is TAG. Do not modify this line
 #*********************************************************************
 # Start multiparticle definitions                                    *

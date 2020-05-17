@@ -30,8 +30,8 @@ Block mass
    15 1.777000e+00 # MTA 
    23 9.118760e+01 # MZ 
    25 1.250000e+02 # MH 
+   50 1.505000e+02 # MDVB 
    52 3.000000e+02 # MXd 
-  100001 1.505000e+02 # MDVB 
 ## Dependent parameters, given by model restrictions.
 ## Those values should be edited following the 
 ## analytical expression. MG5 ignores those values 
@@ -73,7 +73,7 @@ DECAY   6 1.508336e+00 # WT
 DECAY  23 2.495200e+00 # WZ 
 DECAY  24 2.085000e+00 # WW 
 DECAY  25 4.070000e-03 # WH 
-DECAY 100001 1.534000e+00 # WDVB 
+DECAY  50 1.534000e+00 # WDVB 
 ## Dependent parameters, given by model restrictions.
 ## Those values should be edited following the 
 ## analytical expression. MG5 ignores those values 
@@ -97,7 +97,7 @@ DECAY  52 0.000000e+00 # ~xd : 0.0
 # QUANTUM NUMBERS OF NEW STATE(S) (NON SM PDG CODE)
 #===========================================================
 
-Block QNUMBERS 100001  # dvb 
+Block QNUMBERS 50  # dvb 
         1 0  # 3 times electric charge
         2 3  # number of spin states (2S+1)
         3 1  # colour rep (1: singlet, 3: triplet, 8: octet)

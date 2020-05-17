@@ -12,5 +12,5 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       PARAMETER  (ZERO=0D0)
       INCLUDE 'input.inc'
       INCLUDE 'coupl.inc'
-      GC_16 = MDL_EE*MDL_COMPLEXI*MDL_GSM
+      GC_15 = MDL_EE*MDL_COMPLEXI*MDL_GSM
       END

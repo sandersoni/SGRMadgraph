@@ -32,7 +32,7 @@ frblock 2 mdl_gSM
 
 mass 23 mdl_MZ
 
-mass 100001 mdl_MDVB
+mass 50 mdl_MDVB
 
 mass 11 mdl_Me
 
@@ -60,7 +60,7 @@ decay 23 mdl_WZ
 
 decay 24 mdl_WW
 
-decay 100001 mdl_WDVB
+decay 50 mdl_WDVB
 
 decay 6 mdl_WT
 

@@ -1,4 +1,4 @@
-import model ./SMDP_UFO/
+import model ./SMDP_UFO_onlye/
 set automatic_html_opening False
 generate e+ e- > dvb dvb
 output dvb
@@ -13,8 +13,8 @@ set etaj -1.0
 set etaa -1.0
 set etal -1.0
 ./pythia8_card_dvb.dat
-set mxd  5.00000E+00
-set gsm  1.00000E+00
+set mxd  5.00000E+03
+set gsm  1.00000E-05
 set adm  2.40000E-02
 set mdvb  5.00000E+00
 set ebeam1  5.00005E+00

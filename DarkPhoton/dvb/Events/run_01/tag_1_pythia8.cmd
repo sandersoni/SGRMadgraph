@@ -95,7 +95,6 @@ SysCalc:fullCutVariation = off
 ! Additional general parameters.
 !
 ResonanceWidths:minWidth=1e-30
-Check:event=off
 !
 ! Additional technical parameters set by MG5_aMC.
 !

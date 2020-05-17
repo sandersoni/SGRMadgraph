@@ -124,7 +124,7 @@ ingSM=10^-8.;
 SetDirectory[NotebookDirectory[]];
 nevents=10000;
 minMDM=500.(*minimum DM mass to scan over in GeV*);
-maxMDM=10.^6(*Maximum DM mass for scan in GeV*);
+maxMDM=10.^5(*Maximum DM mass for scan in GeV*);
 MDMpoints=5(*How many points along MDM to scan*);
 DPmass=5.(*Dark Photon mass in GeV*);
 (*specpoints=30.(*How many points along the boosted spectrum to generate*);*)
@@ -133,9 +133,9 @@ aucm=1.49598 10^11 *100;(*distance from earth to sun in cm*)
 hawcbins={{0.5,1.6,2.2 10^-12},{1.6,5.0,8.8 10^-13},{5.0,15.7,2.8 10^-13},{15.7,50,8.1 10^-14},{50,158,6.3 10^-14}};(*Start of bin (left edge) and flux limit in TeV and TeV cm^2s^-1 respectively*)
 
 (*These are parameters to be used in the MG5 scan -- they mostly don't matter for the model independent case*)
-MG\[Epsilon]=1.;(*Mixing parameter between photon and dark photon -- doesn't really matter for the model independent scan here*)
+MG\[Epsilon]=1. 10^-5;(*Mixing parameter between photon and dark photon -- doesn't really matter for the model independent scan here*)
 MG\[Alpha]\[Chi]=2.4 10^-2;(*Dark fine structure constant -- also doesn't matter here*)
-MGm\[Chi]=DPmass;(*DM mass -- only need it big enough to avoid the DP decaying into them*)
+MGm\[Chi]=1000.DPmass;(*DM mass -- only need it big enough to avoid the DP decaying into them*)
 
 (*fixedform is what makes the numbers nice to print to a file*)
 StringPadLeft["",1];(*this must be evaluated first for no evident reason*)fixedform[numd_,data_]:=Module[{ef},ef[s_String/;StringTake[s,1]=="-"]:="-"<>StringPadLeft[StringTake[s,{2,-1}],2,"0"];
@@ -160,14 +160,18 @@ If[FileExistsQ["pythia8_card_"<>$mg5outputfile<>".dat"],DeleteFile["pythia8_card
 CopyFile["pythia8_card_default.dat","pythia8_card_"<>$mg5outputfile<>".dat"];
 pythiacard=OpenAppend["pythia8_card_"<>$mg5outputfile<>".dat",PageWidth-> 500];
 WriteString[pythiacard,"ResonanceWidths:minWidth = 1e-30"];
-WriteString[pythiacard,"\n"<>"Check:event = off"];
+(*WriteString[pythiacard,"\n"<>"50:all = dvb dvb 1 0 0 0.1 0.001"];*)
+(*This enables particles with very small widths to still decay by avoiding their width being set to zero for being below the default min of 1e-20*)
+(*WriteString[pythiacard,"\n"<>"Check:event = off"];*)
+(*WriteString[pythiacard,"\n"<>"Beams:eCM = "<>ToString[2.00002 DPmass]];*)
+(*WriteString[pythiacard,"\n"<>"50:isResonance = false"];*)
+(*WriteString[pythiacard,"\n"<>"Check:epTolErr = 1000."];*)
 (*WriteString[pythiacard,"\n"<>"50:onMode = on"];*)
 (*WriteString[pythiacard,"\n"<>"100001:offIfMatch = 1 1"];*)
 
 (*WriteString[pythiacard,"\n"<>"100001:oneChannel = onMode 1. 0. 11 -11"];*)
 
 (*WriteString[pythiacard,"\n"<>"ParticleDecays:allowPhotonRadiation = on"];*)
-(*This enables particles with very small widths to still decay by avoiding their width being set to zero for being below the default min of 1e-20*)
 (*WriteString[pythiacard,"\n"<>"ParticleDecays:limitTau0 = off"];
 WriteString[pythiacard,"\n"<>"ParticleDecays:limitTau = off"];
 WriteString[pythiacard,"\n"<>"ParticleDecays:limitRadius = off"];
@@ -181,7 +185,7 @@ Close[pythiacard];
 ScanMadgraph[]:=(
 If[FileExistsQ[$mg5runfile],DeleteFile[$mg5runfile]];
 If[DirectoryQ[$mg5outputfile],DeleteDirectory[$mg5outputfile,DeleteContents->True]];
-mg5run={"import model ./SMDP_UFO/",
+mg5run={"import model ./SMDP_UFO_onlye/",
  "set automatic_html_opening False",
  "generate e+ e- > dvb dvb",
 "output " <> $mg5outputfile,
@@ -211,7 +215,7 @@ mg5run={"import model ./SMDP_UFO/",
 "set ebeam2 "<>ToString[fixedform[6,DPmass*1.00001]],
 "set WDVB Auto"};
 Export[$mg5runfile,mg5run,"text"];
-Run["mg5_aMC "<>$mg5runfile];)
+(*Run["mg5_aMC "<>$mg5runfile];*))
 
 
 (* ::Input::Initialization:: *)
@@ -227,48 +231,6 @@ photonErest=Flatten[Import[$pythonoutputfile,"TSV"]];)
 (* ::Input::Initialization:: *)
 (*RUN MG5 AND PYTHIA TO GET SPECTRUM*)
 ScanMadgraph[];
-
-
-(* ::Input::Initialization:: *)
-pythiaread[];
-
-
-(* ::Input::Initialization:: *)
-(*BOOSTING*)
-dNdx1[E1_,m\[Chi]_,mA_]:=((*E1 will be the energy in the boosted frame, i.e. the galactic frame. See 1503.01773 pg. 16*)
-x1=E1/m\[Chi];(*No 2 here as we are boosting, but not decaying into two products*)
-\[Epsilon]1=2 mA/m\[Chi];
-t1max=Min[1,(2x1)/\[Epsilon]1^2 (1+Sqrt[1-\[Epsilon]1^2])];
-t1min=(2x1)/\[Epsilon]1^2 (1-Sqrt[1-\[Epsilon]1^2]);
-tabint=Select[photonErest,mA/2 t1max>#>mA/2 t1min&];
-tabint=1/nevents Table[1/(2tabint[[i]]/mA),{i,1,Length[tabint]}];
-Sum[tabint[[i]],{i,1,Length[tabint]}]
-)
-
-
-(* ::Input::Initialization:: *)
-(*Now build a table of boosted points along the spectrum*)
-(*spectab=Table[{10^lEn,(10^lEn)^2dNdx1[10^lEn,100.,5. 10^-3]},{lEn,Log10[0.5],Log10[100.],(Log10[100.]-Log10[0.5])/(specpoints-1)}]*)
-hawcbins={{0.5,1.6,2.2 10^-12},{1.6,5.0,8.8 10^-13},{5.0,15.7,2.8 10^-13},{15.7,50.,8.1 10^-14},{50.,158.,6.3 10^-14}};
-ben=Table[i,{i,1,Length[hawcbins]}](*Just initializing a table to be overwritten*);
-Do[ben[[i]]={hawcbins[[i,1]],10^((Log10[hawcbins[[i,1]]]+Log10[hawcbins[[i,2]]])/2),hawcbins[[i,2]]},{i,1,Length[hawcbins]}](*Creates a table "ben" of all the energies to be sampled on the spectrum in TeV*)
-ben=ben//Flatten;
-ben=DeleteDuplicates[ben];
-
-spectab[m\[Chi]_,mA_]:=Table[{ben[[i]],ben[[i]]^2 dNdx1[ben[[i]],m\[Chi],mA]},{i,1,Length[ben]}];(*This gives the boosted spectrum E^2 dN/dE in the galactic rest frame,per annihilation*)
-
-
-(* ::Input::Initialization:: *)
-(*BUILD BOOSTED SPECTRUM SCAN ALONG MDM -- EVERYTHING IN TEV FROM HERE*)
-If[FileExistsQ[$resultsfile],DeleteFile[$resultsfile]];
-mdm=Table[0.001*10^lm\[Chi],{lm\[Chi],Log10[minMDM],Log10[maxMDM],(Log10[maxMDM]-Log10[minMDM])/(MDMpoints-1)}](*Generates a table of DM masses in TeV distributed uniformly in log space to be scanned over*);
-Do[
-outlist={mdm[[i]],0.001*DPmass,spectab[mdm[[i]],0.001*DPmass]};
-results=OpenAppend[$resultsfile,PageWidth-> 500];
-Write[results,outlist];
-Close[results];
-,{i,1,MDMpoints}]
-
 
 
 (* ::Input::Initialization:: *)

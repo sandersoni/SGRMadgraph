@@ -19,7 +19,7 @@ with open("{}".format(sys.argv[1]), "r") as f:
 
         vtx_id = int(data[10])
         if vtx_id == 0 and int(data[1]) == 22:
-            particles.append(float(data[5]) * 0.001)
+            particles.append(float(data[5])*0.001)
             # pdg_id = int(data[1])
             # if pdg_id == -13:
             #     muons.append(float(data[5]))

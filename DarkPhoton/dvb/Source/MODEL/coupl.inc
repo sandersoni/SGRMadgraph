@@ -26,7 +26,7 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       COMMON/WIDTHS/ MDL_WZ,MDL_WH,MDL_WW,MDL_WDVB,MDL_WT
 
 
-      DOUBLE COMPLEX GC_16
+      DOUBLE COMPLEX GC_15
 
-      COMMON/COUPLINGS/ GC_16
+      COMMON/COUPLINGS/ GC_15
 
