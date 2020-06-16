@@ -1,6 +1,6 @@
 # This file was automatically created by FeynRules 2.3.32
 # Mathematica version: 11.3.0 for Linux x86 (64-bit) (March 7, 2018)
-# Date: Tue 30 Apr 2019 16:43:44
+# Date: Tue 16 Jun 2020 21:59:26
 
 
 
@@ -143,7 +143,7 @@ MDVB = Parameter(name = 'MDVB',
                  value = 150.5,
                  texname = '\\text{MDVB}',
                  lhablock = 'MASS',
-                 lhacode = [ 100001 ])
+                 lhacode = [ 50 ])
 
 Me = Parameter(name = 'Me',
                nature = 'external',
@@ -252,10 +252,10 @@ WW = Parameter(name = 'WW',
 WDVB = Parameter(name = 'WDVB',
                  nature = 'external',
                  type = 'real',
-                 value = 1.534,
+                 value = 2.614889296342459,
                  texname = '\\text{WDVB}',
                  lhablock = 'DECAY',
-                 lhacode = [ 100001 ])
+                 lhacode = [ 50 ])
 
 WT = Parameter(name = 'WT',
                nature = 'external',
@@ -405,75 +405,75 @@ muH = Parameter(name = 'muH',
                 value = 'cmath.sqrt(lam*vev**2)',
                 texname = '\\mu')
 
-I1a11 = Parameter(name = 'I1a11',
+I1b11 = Parameter(name = 'I1b11',
                   nature = 'internal',
                   type = 'complex',
                   value = 'ydo',
-                  texname = '\\text{I1a11}')
+                  texname = '\\text{I1b11}')
 
-I1a22 = Parameter(name = 'I1a22',
+I1b22 = Parameter(name = 'I1b22',
                   nature = 'internal',
                   type = 'complex',
                   value = 'ys',
-                  texname = '\\text{I1a22}')
+                  texname = '\\text{I1b22}')
 
-I1a33 = Parameter(name = 'I1a33',
+I1b33 = Parameter(name = 'I1b33',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yb',
-                  texname = '\\text{I1a33}')
+                  texname = '\\text{I1b33}')
 
-I2a11 = Parameter(name = 'I2a11',
+I2b11 = Parameter(name = 'I2b11',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yup',
-                  texname = '\\text{I2a11}')
+                  texname = '\\text{I2b11}')
 
-I2a22 = Parameter(name = 'I2a22',
+I2b22 = Parameter(name = 'I2b22',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yc',
-                  texname = '\\text{I2a22}')
+                  texname = '\\text{I2b22}')
 
-I2a33 = Parameter(name = 'I2a33',
+I2b33 = Parameter(name = 'I2b33',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yt',
-                  texname = '\\text{I2a33}')
+                  texname = '\\text{I2b33}')
 
-I3a11 = Parameter(name = 'I3a11',
+I3b11 = Parameter(name = 'I3b11',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yup',
-                  texname = '\\text{I3a11}')
+                  texname = '\\text{I3b11}')
 
-I3a22 = Parameter(name = 'I3a22',
+I3b22 = Parameter(name = 'I3b22',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yc',
-                  texname = '\\text{I3a22}')
+                  texname = '\\text{I3b22}')
 
-I3a33 = Parameter(name = 'I3a33',
+I3b33 = Parameter(name = 'I3b33',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yt',
-                  texname = '\\text{I3a33}')
+                  texname = '\\text{I3b33}')
 
-I4a11 = Parameter(name = 'I4a11',
+I4b11 = Parameter(name = 'I4b11',
                   nature = 'internal',
                   type = 'complex',
                   value = 'ydo',
-                  texname = '\\text{I4a11}')
+                  texname = '\\text{I4b11}')
 
-I4a22 = Parameter(name = 'I4a22',
+I4b22 = Parameter(name = 'I4b22',
                   nature = 'internal',
                   type = 'complex',
                   value = 'ys',
-                  texname = '\\text{I4a22}')
+                  texname = '\\text{I4b22}')
 
-I4a33 = Parameter(name = 'I4a33',
+I4b33 = Parameter(name = 'I4b33',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yb',
-                  texname = '\\text{I4a33}')
+                  texname = '\\text{I4b33}')
 

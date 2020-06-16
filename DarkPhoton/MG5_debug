@@ -43,6 +43,14 @@ Traceback (most recent call last):
     cards=cards, mode=mode, **opt)
   File "/opt/madgraph/madgraph/interface/extended_cmd.py", line 1113, in ask
     question_instance.postcmd(answer, line)
+  File "/opt/madgraph/madgraph/interface/common_run_interface.py", line 5948, in postcmd
+    ending_question = cmd.OneLinePathCompletion.postcmd(self,stop,line)
+  File "/opt/madgraph/madgraph/interface/extended_cmd.py", line 2346, in postcmd
+    return self.reask(reprint_opt)
+  File "/opt/madgraph/madgraph/interface/common_run_interface.py", line 5940, in reask
+    cmd.OneLinePathCompletion.reask(self,*args, **opt)
+  File "/opt/madgraph/madgraph/interface/extended_cmd.py", line 2168, in reask
+    self.postcmd(stop, answer)
   File "/opt/madgraph/madgraph/interface/common_run_interface.py", line 5956, in postcmd
     self.do_update('dependent', timer=20)
   File "/opt/madgraph/madgraph/interface/common_run_interface.py", line 6002, in do_update

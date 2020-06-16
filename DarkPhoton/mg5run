@@ -4,7 +4,7 @@ generate e+ e- > dvb dvb
 output dvb
 launch dvb
 shower = Pythia8
-set nevents 10000
+set nevents 1000
 set WDVB Auto
 set ptj 0.0
 set pta 0.0
@@ -13,10 +13,44 @@ set etaj -1.0
 set etaa -1.0
 set etal -1.0
 ./pythia8_card_dvb.dat
-set mxd  5.00000E+03
-set gsm  1.00000E-05
-set adm  2.40000E-02
-set mdvb  5.00000E+00
-set ebeam1  5.00005E+00
-set ebeam2  5.00005E+00
-set WDVB Auto
+set mxd  1.00000E+05
+set gsm  1.00000E-08
+set adm  2.40000E+00
+set mdvb  1.00000E+00
+set ebeam1  1.00001E+00
+set ebeam2  1.00001E+00
+launch dvb
+set mxd  1.58489E+05
+set gsm  1.00000E-08
+set adm  3.80374E+00
+set mdvb  1.00000E+00
+set ebeam1  1.00001E+00
+set ebeam2  1.00001E+00
+launch dvb
+set mxd  2.51189E+05
+set gsm  1.00000E-08
+set adm  6.02853E+00
+set mdvb  1.00000E+00
+set ebeam1  1.00001E+00
+set ebeam2  1.00001E+00
+launch dvb
+set mxd  3.98107E+05
+set gsm  1.00000E-08
+set adm  9.55457E+00
+set mdvb  1.00000E+00
+set ebeam1  1.00001E+00
+set ebeam2  1.00001E+00
+launch dvb
+set mxd  6.30957E+05
+set gsm  1.00000E-08
+set adm  1.51430E+01
+set mdvb  1.00000E+00
+set ebeam1  1.00001E+00
+set ebeam2  1.00001E+00
+launch dvb
+set mxd  1.00000E+06
+set gsm  1.00000E-08
+set adm  2.40000E+01
+set mdvb  1.00000E+00
+set ebeam1  1.00001E+00
+set ebeam2  1.00001E+00

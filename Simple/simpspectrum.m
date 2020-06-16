@@ -26,7 +26,7 @@ $spectruminputfile="spectruminput.mx";
 
 nevents=10000; (*number of events per mg5 run*)
 (*parameters=Import[$spectruminputfile]*)
-parameters={{"mxd",0.5 10.^3,10.^6,100},{"gsm",10.^-0,10.^-0,Null},{"adm"},{"mdvb"}}
+parameters={{"mxd",0.5 10.^3,10.^6,5},{"gsm",10.^-0,10.^-0,Null},{"adm"},{"mdvb"}}
 (*parameters to be tracked. First two have syntax {"name", scan start, scan end, number of steps}. To not scan set start = end and steps = Null*)
 intab=Table[{10.^par1,10.^par2,0.024(*10.^par1/1000.*),1.},{par1,Log10[parameters[[1,2]]],Log10[parameters[[1,3]]],If[parameters[[1,2]]!=parameters[[1,3]],(Log10[parameters[[1,3]]]-Log10[parameters[[1,2]]])/(parameters[[1,4]]-1.),Null]},{par2,Log10[parameters[[2,2]]],Log10[parameters[[2,3]]],If[parameters[[2,2]]!=parameters[[2,3]],(Log10[parameters[[2,3]]]-Log10[parameters[[2,2]]])/(parameters[[2,4]]-1.),Null]}];
 If[Length[Dimensions[intab]]==3,

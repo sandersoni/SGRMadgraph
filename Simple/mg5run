@@ -16,7 +16,7 @@ set etal -1.0
 set mxd  5.00000E+00
 set gsm  1.00000E+00
 set adm  2.40000E-02
-set mdvb  5.00000E+00
+set mdvb  3.00000E-01
 set ebeam1  5.00005E+00
 set ebeam2  5.00005E+00
 set WDVB Auto

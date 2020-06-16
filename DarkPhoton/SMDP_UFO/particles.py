@@ -1,6 +1,6 @@
 # This file was automatically created by FeynRules 2.3.32
 # Mathematica version: 11.3.0 for Linux x86 (64-bit) (March 7, 2018)
-# Date: Tue 30 Apr 2019 16:43:44
+# Date: Tue 16 Jun 2020 21:59:26
 
 
 from __future__ import division
@@ -147,7 +147,7 @@ ghG = Particle(pdg_code = 82,
 
 ghG__tilde__ = ghG.anti()
 
-DVB = Particle(pdg_code = 100001,
+DVB = Particle(pdg_code = 50,
                name = 'DVB',
                antiname = 'DVB',
                spin = 3,
